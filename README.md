@@ -1,5 +1,5 @@
 # awvl
-Django
+Django   必须使用google chrome打开
 # Installing
 ## Clone the project
 ```
@@ -41,4 +41,6 @@ localhost:8000/admin
 创建超级管理员
 python manage.py createsuperuser
 ```
+
+
 
