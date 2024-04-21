@@ -1,91 +1,214 @@
 <!DOCTYPE html>
-<!-- 网站主语言 -->
-<html lang="zh-cn">
-
+<html lang="en">
 <head>
-    <!-- 网站采用的字符编码 -->
     <meta charset="utf-8">
-    <!-- 网站标题 -->
-    <title>注册</title>
+    <title>register</title>
     {% load static %}
-    <!-- 引入bootstrap的css文件 -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/css/all.min.css' %}">
     <!-- 引入vuejs -->
     <script type="text/javascript" src="{% static 'js/vue-2.5.16.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/axios-0.18.0.min.js' %}"></script>
 </head>
+<style>
+  .form-section {
+    display: none;
+  }
+  .form-section.active {
+    display: block;
+  }
+  .left-section{
+      display: none;
+  }
+  .left-section.active{
+      display: block;
+  }
+  .button-section{
+      display: none;
+  }
+  .button-section.active{
+      display: block;
+  }
+</style>
+
 <body>
 <div id="app">
 
 
-<!-- 定义导航栏 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <!-- 导航栏商标 -->
-        <div>
-            <a class="navbar-brand" href="index.html">个人博客</a>
-        </div>
-    </div>
-    <!--登录/个人中心-->
-    <div class="navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
 <!--content-->
-<div class="container" style="height: 600px;margin-top: 20px">
-    <div class="row" >
-        <div class="col-12">
-            <div class="col-6">
-                <form class="login" id="login_form" method="POST">
-                    {% csrf_token %}
-                    <!--手机号-->
-                    <div class="form-group">
-                        <label >手机号: </label>
-                        <div class="col-lg-6">
-                            <input type="text" name="mobile" placeholder="请输入手机号" autofocus="autofocus" required
-                                   id="id_login" class="form-control" v-model="mobile" />
-                        </div>
-                        <small class="form-text text-muted ml-1" v-show="mobile_error" >[[mobile_error_message]]</small>
-                    </div>
-                    <!--密码-->
-                    <div class="form-group">
-                        <label >密码:</label>
-                        <div class="col-lg-6">
-                            <input type="password" name="password" placeholder="请输入密码" required  class="form-control" v-model="password" @blur="check_password" />
-                        </div>
-                        <small class="form-text text-muted ml-1" v-show="password_error" >[[password_error_message]]</small>
-                    </div>
-                    <!--确认密码-->
-                    <div class="form-group">
-                        <label >确认密码:</label>
-                        <div class="col-lg-6">
-                            <input type="password" name="password2" placeholder="请输入确认密码" required  class="form-control" v-model="password2" @blur="check_password2"/>
-                        </div>
-                        <small class="form-text text-muted ml-1" v-show="password2_error" >[[password2_error_message]]</small>
-                    </div>
-
-
-                    <button class="primaryAction btn btn-primary" type="submit" id="submit_login" @click="on_submit">注册</button>
-                </form>
-            </div>
+<div class="container" >
+    <div class="box box-left">
+        <div class="Logo-contain"><img src="{% static 'img/logo.png' %}" alt="Logo" class="logo"> </div>
+        <div class="left-section active" id="left_sec1">
+            <p1>Creat an Account</p1>
+            <p>Enter your name</p>
         </div>
+         <div class="left-section" id="left_sec2">
+            <p1>Contact Information</p1>
+            <p>Enter the email address you want to use </p>
+        </div>
+        <div class="left-section" id="left_sec3">
+            <p1>User Information</p1>
+        </div>
+        <div class="left-section" id="left_sec4">
+            <p1>OS Type</p1>
+        </div>
+        <div class="left-section" id="left_sec5">
+            <p1>IP address</p1>
+        </div>
+        <div class="left-section" id="left_sec6">
+            <p1>Team</p1>
+        </div>
+        <div class="left-section" id="left_sec7">
+            <p1>Lead</p1>
+        </div>
+
+
+
+
     </div>
+    <div class="box box-right">
+        <form class="login" id="login_form" method="POST">
+            {% csrf_token %}
+
+            <div class="form-section active" id="section1">
+                <input type="text" name="full_name" id="full_name" placeholder="Fullname" autofocus="autofocus" required id="id_login" class="form-control" v-model="full_name" />
+            </div>
+            <div class="button-section active" id="button_sec1">
+                <button type="button" onclick="showSection(2)">Next</button>
+            </div>
+
+            <div class="form-section" id="section2">
+                <input type="text" name="email_address" placeholder="Email" autofocus="autofocus" required id="id_login" class="form-control" v-model="email_address" />
+            </div>
+            <div class="button-section" id="button_sec2">
+                <button type="button" onclick="showSection(1)">Previous</button>
+                <button type="button" onclick="showSection(3)">Next</button>
+            </div>
+
+           <div class="form-section" id="section3">
+                <input type="text" name="username" id="username" placeholder="username" autofocus="autofocus" required id="id_login" class="form-control" v-model="username" /><br>
+                <input type="password" name="password" placeholder="password" required  class="form-control" v-model="password" @blur="check_password" /><br>
+                <input type="password" name="password2" placeholder="Confirm password" required  class="form-control" v-model="password2" @blur="check_password2"/><br>
+            </div>
+            <div class="button-section" id="button_sec3">
+                <button type="button" onclick="showSection(2)">Previous</button>
+                <button type="button" onclick="showSection(4)">Next</button>
+            </div>
+
+            <div class="form-section" id="section4">
+                <select id="OS_type" name="OS_type" required v-model="OS_type">
+                        <option value="Windows"> Windows </option>
+                        <option value="mac-OS"> mac OS </option>
+                        <option value="Linux"> Linux </option>
+                </select>
+            </div>
+            <div class="button-section" id="button_sec4">
+                <button type="button" onclick="showSection(3)">Previous</button>
+                <button type="button" onclick="showSection(5)">Next</button>
+            </div>
+
+            <div class="form-section" id="section5">
+                <input type="text" name="IP_address" placeholder="IP address" autofocus="autofocus"  id="id_login" class="form-control" v-model="IP_address" />
+            </div>
+            <div class="button-section" id="button_sec5">
+                <button type="button" onclick="showSection(4)">Previous</button>
+                <button type="button" onclick="showSection(6)">Next</button>
+            </div>
+
+            <div class="form-section" id="section6">
+                <select id="Team_bw" name="Team" required v-model="Team">
+                    <option value="Blue">Blue</option>
+                    <option value="White">White</option>
+                </select>
+                <select id="Team_Role" name="Role" required v-model="Role" onchange="changeButtonType(this)">
+                    <option value="Lead">Lead</option>
+                    <option value="Member">Member</option>
+                </select>
+            </div>
+            <div class="button-section" id="button_sec6">
+                <button type="button" onclick="showSection(5)">Previous</button>
+                <input type="button" id="lead_or_member" value="Submit">
+            </div>
+
+
+
+            <div class="form-section" id="section7">
+                <input type="text" name="Team_name" placeholder="Team Name" autofocus="autofocus" id="Team_name" v-model="Team_name" />
+            </div>
+            <div class="button-section" id="button_sec7">
+                <button type="button" onclick="clear_all_form()">Previous</button>
+                <button type="submit" id="submit_login" @click="on_submit">Submit</button>
+            </div>
+
+
+
+        </form>
+    </div>>
 </div>
 
-<!-- Footer -->
-<footer class="py-3 bg-dark" id="footer">
-    <div class="container">
-        <h5 class="m-0 text-center text-white">Copyright @ qiruihua</h5>
-    </div>
-</footer>
+
 </div>
 <!-- 引入js -->
 <script type="text/javascript" src="{% static 'js/host.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/register1.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/register3.js' %}"></script>
+<script>
+function showSection(sectionId) {
+    const sections = document.getElementsByClassName('form-section');
+    const left_sec = document.getElementsByClassName('left-section');
+    const button_sec = document.getElementsByClassName('button-section');
+
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+    }
+    for (let i = 0; i < left_sec.length; i++) {
+        left_sec[i].classList.remove('active');
+    }
+    for (let i = 0; i < button_sec.length; i++) {
+        button_sec[i].classList.remove('active');
+    }
+    document.getElementById('section' + sectionId).classList.add('active');
+    document.getElementById('left_sec' + sectionId).classList.add('active');
+    document.getElementById('button_sec' + sectionId).classList.add('active');
+}
+function changeButtonType(selectElement) {
+    const IDButton = document.getElementById('lead_or_member');
+    if (selectElement.value === "Lead") {
+        IDButton.type = "button";
+        IDButton.onclick = function() {
+            showSection(7);
+        };
+        IDButton.value = "Next"
+    } else if (selectElement.value === "Member") {
+        IDButton.type = "Submit";
+        IDButton.value = "Submit";
+    }
+}
+function changeButtonType(selectElement) {
+    const IDButton = document.getElementById('lead_or_member');
+    if (selectElement.value === "Lead") {
+        IDButton.type = "button";
+        IDButton.onclick = function() {
+            showSection(7);
+        };
+        IDButton.value = "Next"
+    } else if (selectElement.value === "Member") {
+        IDButton.type = "Submit";
+        IDButton.value = "Submit";
+    }
+}
+function clear_all_form(){
+    const Team_name_list = ['Team_name'];
+    for (let i = 0;i < Team_name_list.length;i++)
+    {
+        const Team_name = Team_name_list[i];
+        document.getElementById('Team_name').value = ''
+    }
+    showSection(6);
+}
+
+</script>
 </body>
 </html>

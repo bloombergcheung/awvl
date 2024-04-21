@@ -1,0 +1,106 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    background-image: url('111.jpg'); /* 替换为您的图片URL */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0); /* 透明背景 */
+}
+.logo {
+    height: 50px;
+}
+.navbar {
+    display: flex;
+    margin:0; /* 外边距为0 */
+    padding: 0; /* 内边距为0 */
+}
+.navbar a {
+    color: #ffffff; /* 文本颜色 */
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+.container{
+    width:380px;
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    border-radius: 25px;
+    background-color: rgba(36,125,215,0.7);
+    box-shadow: 0 0 17px #3dd5f3;
+}
+.container-header{
+    text-align: center;
+    padding-top: 20px;
+}
+.container-header h1{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.container-main{
+    text-align: center;
+}
+
+
+
+.container-main input[type="password"],input[type="text"]{
+    width: 250px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+.container-main input[type="checkbox"]{
+    margin-right: 5px;
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    color: #dbdbdb;
+}
+
+.container-main button{
+    width: 120px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.check-box-group label{
+    color: #ffffff;
+}
+
+.container-main button:hover{
+    background-color: #c0c0c0;
+}
+
+.link-group{
+    padding-bottom: 20px;
+}
+
+.link_pwd_reg{
+    font-size: 15px;
+    color: aliceblue;
+}

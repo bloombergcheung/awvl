@@ -11,7 +11,7 @@ class ArticleCategory(models.Model):
     #分类的创建时间
     created=models.DateTimeField(default=timezone.now)
 
-    # admin站点显示，调试查看对象方便///迁移文件
+    # admin站点显示，调试查看对象方便
     def __str__(self):
         return self.title
 
@@ -23,19 +23,7 @@ class ArticleCategory(models.Model):
 from users.models import User
 from django.utils import timezone
 class Article(models.Model):
-    """
-    作者
-    标题图
-    标题
-    分类
-    标签
-    摘要信息
-    文章正文
-    浏览量
-    评论量
-    文章的创建时间
-    文章的修改时间
-    """
+
     # 作者
     # 参数on_delete 就是当user表中的数据删除之后，文章信息也同步删除
     author=models.ForeignKey(User,on_delete=models.CASCADE)

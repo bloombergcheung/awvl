@@ -2456,3 +2456,1789 @@ INFO 2024-04-20 23:05:42,819 basehttp 212 "GET /?cat_id=2 HTTP/1.1" 200 4896
 INFO 2024-04-20 23:05:43,158 basehttp 212 "GET /?cat_id=3 HTTP/1.1" 200 4896
 INFO 2024-04-20 23:05:43,472 basehttp 212 "GET /?cat_id=4 HTTP/1.1" 200 4896
 INFO 2024-04-20 23:05:44,330 basehttp 212 "GET /?cat_id=1 HTTP/1.1" 200 19350
+INFO 2024-04-21 00:02:02,303 basehttp 212 "GET / HTTP/1.1" 200 19350
+INFO 2024-04-21 00:02:02,362 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-21 00:03:51,645 autoreload 266 /Users/bloomberg/awvl/blog/blog/settings.py changed, reloading.
+INFO 2024-04-20 16:04:47,886 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-20 16:05:40,791 autoreload 266 /Users/bloomberg/awvl/blog/blog/settings.py changed, reloading.
+INFO 2024-04-20 16:05:41,111 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-20 16:08:00,367 autoreload 266 /Users/bloomberg/awvl/blog/blog/settings.py changed, reloading.
+INFO 2024-04-21 02:08:01,023 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:08:31,889 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:08:31,924 basehttp 212 "GET / HTTP/1.1" 200 19330
+INFO 2024-04-21 02:08:32,641 basehttp 212 "GET /register/ HTTP/1.1" 200 3695
+INFO 2024-04-21 02:14:13,577 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:14:13,865 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:14:39,288 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 02:14:39,480 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:15:32,826 basehttp 212 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:15:32,860 basehttp 212 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4159
+INFO 2024-04-21 02:15:32,930 basehttp 212 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:15:32,936 basehttp 212 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4159
+ERROR 2024-04-21 02:15:42,406 log 241 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'blog.bloomberg_users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/views.py", line 88, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/edit.py", line 150, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/forms/forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/forms/forms.py", line 192, in errors
+    self.full_clean()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/forms/forms.py", line 328, in full_clean
+    self._clean_form()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/forms/forms.py", line 349, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 250, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 56, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'blog.bloomberg_users' doesn't exist")
+ERROR 2024-04-21 02:15:42,411 basehttp 212 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 305627
+INFO 2024-04-21 02:16:05,725 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:16:15,497 basehttp 212 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:16:15,497 basehttp 212 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:16:15,531 basehttp 212 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4159
+INFO 2024-04-21 02:16:15,531 basehttp 212 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4159
+INFO 2024-04-21 02:16:26,045 basehttp 212 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-04-21 02:16:26,064 basehttp 212 "GET /admin/ HTTP/1.1" 200 7268
+INFO 2024-04-21 02:16:51,626 basehttp 212 "GET /admin/home/articlecategory/4/change/ HTTP/1.1" 200 9266
+INFO 2024-04-21 02:16:51,647 basehttp 212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-21 02:16:55,587 basehttp 212 "GET /admin/home/articlecategory/ HTTP/1.1" 200 9281
+INFO 2024-04-21 02:16:55,606 basehttp 212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-21 02:16:58,702 basehttp 212 "GET /admin/home/ HTTP/1.1" 200 5065
+INFO 2024-04-21 02:17:01,095 basehttp 212 "GET /admin/auth/ HTTP/1.1" 200 5159
+INFO 2024-04-21 02:17:04,300 basehttp 212 "GET /admin/auth/group/ HTTP/1.1" 200 7512
+INFO 2024-04-21 02:17:04,324 basehttp 212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-21 02:17:04,364 basehttp 212 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2024-04-21 02:17:44,378 autoreload 266 /Users/bloomberg/awvl/blog/home/models.py changed, reloading.
+INFO 2024-04-21 02:17:44,711 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:17:57,020 autoreload 266 /Users/bloomberg/awvl/blog/home/models.py changed, reloading.
+INFO 2024-04-21 02:17:57,249 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:20:41,764 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:20:42,066 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:21:45,155 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:21:45,503 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:21:53,752 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:21:54,056 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:21:55,195 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:21:55,397 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:06,669 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:06,886 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:08,031 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:08,252 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:24,636 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:24,978 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:47,376 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:47,675 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:54,908 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:55,136 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:22:56,271 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:22:56,473 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:23:46,334 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:23:46,680 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:23:53,907 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:23:54,192 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:24:00,295 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:24:00,489 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:24:50,245 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:24:50,546 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:25:04,853 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:25:05,180 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:25:13,430 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:25:13,637 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:25:41,215 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:25:41,489 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:25:44,667 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:25:44,881 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:25:53,133 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:25:53,370 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:17,825 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:18,118 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:28,336 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:28,541 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:29,694 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:29,911 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:42,197 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:42,415 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:45,573 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:45,767 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:57,071 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:57,336 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:26:59,481 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:26:59,727 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:27:11,029 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:27:11,295 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:28:22,558 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:28:22,816 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:48:00,198 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:48:51,855 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:48:52,077 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:49:54,044 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:49:54,344 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:50:24,885 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:50:25,212 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:52:36,894 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:55:15,055 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:55:15,260 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:55:19,429 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:55:19,640 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:55:20,369 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:57:00,030 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 02:57:00,335 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:57:22,714 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 02:57:22,915 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:58:35,981 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 02:58:36,275 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 02:58:43,511 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 02:58:43,720 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:02:22,880 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:02:23,187 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:02:30,381 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:02:30,590 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:02:52,998 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:02:53,211 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:03:00,437 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:03:00,654 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:03:07,904 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:03:08,118 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:03:15,338 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:03:15,559 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:03:28,836 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:03:29,043 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:04:38,958 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:04:39,279 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:04:55,607 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:04:55,907 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:12,196 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:12,490 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:21,720 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:21,926 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:31,168 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:31,390 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:37,608 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:37,821 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:42,002 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:42,231 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:05:58,532 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:05:58,743 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:07:05,808 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:07:06,115 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:07:20,386 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:07:20,665 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:08:40,892 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:08:41,166 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:10:52,123 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:10:52,318 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:02,539 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:02,756 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:06,925 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:07,138 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:37,649 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:37,984 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:41,160 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:41,370 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:49,597 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:49,808 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:11:55,020 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:11:55,265 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:12:01,475 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:12:01,694 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:12:23,082 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:12:23,278 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:13:51,130 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:13:58,065 basehttp 212 "GET / HTTP/1.1" 200 19330
+INFO 2024-04-21 03:13:58,099 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-21 03:16:34,355 basehttp 212 "GET /register/ HTTP/1.1" 200 3694
+INFO 2024-04-21 03:19:27,208 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:20:25,993 basehttp 212 "GET /register/ HTTP/1.1" 200 7245
+INFO 2024-04-21 03:21:25,115 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:21:25,432 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:22:04,095 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:22:04,375 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:24:02,943 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:24:03,224 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:24:42,827 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:24:43,116 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:25:09,634 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:25:09,961 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:25:12,188 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:25:12,384 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:25:18,600 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:25:18,862 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:25:28,124 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 03:25:28,415 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:31:28,962 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:31:34,995 basehttp 212 "GET /register/ HTTP/1.1" 200 7120
+INFO 2024-04-21 03:32:02,308 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:32:04,058 basehttp 212 "GET /register/ HTTP/1.1" 200 6941
+INFO 2024-04-21 03:35:45,518 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 03:35:51,950 basehttp 212 "GET /register/ HTTP/1.1" 200 6699
+INFO 2024-04-21 03:35:51,961 basehttp 212 "GET /static/js/register2.js HTTP/1.1" 200 1675
+INFO 2024-04-21 03:36:32,354 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 03:36:32,381 basehttp 212 "GET / HTTP/1.1" 200 19330
+INFO 2024-04-21 04:10:11,707 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:10:14,794 basehttp 212 "GET /center/ HTTP/1.1" 200 6616
+INFO 2024-04-21 04:10:14,821 basehttp 212 "GET /static/js/center2.js HTTP/1.1" 200 522
+WARNING 2024-04-21 04:10:14,827 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+INFO 2024-04-21 04:10:48,625 basehttp 212 "GET /center/ HTTP/1.1" 200 6615
+WARNING 2024-04-21 04:10:48,633 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+WARNING 2024-04-21 04:10:48,687 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+INFO 2024-04-21 04:12:36,329 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:12:38,426 basehttp 212 "GET /center/ HTTP/1.1" 200 6654
+WARNING 2024-04-21 04:12:38,436 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+INFO 2024-04-21 04:14:20,424 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 04:14:20,454 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 04:14:20,470 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-21 04:14:20,471 basehttp 212 "GET /static/js/index1.js HTTP/1.1" 304 0
+INFO 2024-04-21 04:14:21,362 basehttp 212 "GET /register/ HTTP/1.1" 200 6699
+WARNING 2024-04-21 04:14:21,370 basehttp 212 "GET /static/js/register1.js HTTP/1.1" 404 1804
+INFO 2024-04-21 04:14:21,379 basehttp 212 "GET /static/js/register2.js HTTP/1.1" 304 0
+INFO 2024-04-21 04:14:56,653 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 04:14:56,997 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:15:06,727 autoreload 668 Watching for file changes with StatReloader
+ERROR 2024-04-21 04:15:30,130 views 53 (1062, "Duplicate entry '' for key 'tb_users.mobile'")
+WARNING 2024-04-21 04:15:30,131 log 241 Bad Request: /register/
+WARNING 2024-04-21 04:15:30,131 basehttp 212 "POST /register/ HTTP/1.1" 400 12
+ERROR 2024-04-21 04:15:53,713 views 53 (1062, "Duplicate entry '' for key 'tb_users.mobile'")
+WARNING 2024-04-21 04:15:53,713 log 241 Bad Request: /register/
+WARNING 2024-04-21 04:15:53,713 basehttp 212 "POST /register/ HTTP/1.1" 400 12
+INFO 2024-04-21 04:16:28,075 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 04:16:28,386 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:16:31,554 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 04:16:31,764 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:17:05,365 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 04:17:05,704 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 04:17:11,118 basehttp 212 "GET /register/ HTTP/1.1" 200 6699
+WARNING 2024-04-21 04:17:11,131 basehttp 212 "GET /static/js/register1.js HTTP/1.1" 404 1804
+INFO 2024-04-21 04:17:30,636 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 04:17:30,661 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 04:17:32,844 basehttp 212 "GET /center/ HTTP/1.1" 200 6651
+WARNING 2024-04-21 04:17:32,851 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+INFO 2024-04-21 17:25:12,681 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:25:18,358 basehttp 212 "GET /center/ HTTP/1.1" 200 6651
+WARNING 2024-04-21 17:25:18,413 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+INFO 2024-04-21 17:28:10,526 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:28:10,555 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-21 17:28:10,556 basehttp 212 "GET /static/js/index1.js HTTP/1.1" 304 0
+INFO 2024-04-21 17:35:39,097 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:35:56,591 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:35:56,609 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 200 13383
+WARNING 2024-04-21 17:35:56,712 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 17:35:56,712 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-21 17:36:01,366 basehttp 212 "GET /register/ HTTP/1.1" 200 6732
+INFO 2024-04-21 17:36:01,386 basehttp 212 "GET /static/js/register2.js HTTP/1.1" 200 1675
+WARNING 2024-04-21 17:36:01,387 log 241 Not Found: /register/all.min.css
+WARNING 2024-04-21 17:36:01,389 log 241 Not Found: /register/login.css
+WARNING 2024-04-21 17:36:01,389 basehttp 212 "GET /register/all.min.css HTTP/1.1" 404 3629
+WARNING 2024-04-21 17:36:01,390 basehttp 212 "GET /register/login.css HTTP/1.1" 404 3623
+INFO 2024-04-21 17:38:38,900 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:38:40,441 basehttp 212 "GET /register/ HTTP/1.1" 200 6719
+INFO 2024-04-21 17:38:40,453 basehttp 212 "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2024-04-21 17:38:40,454 basehttp 212 "GET /static/css/all.min.css HTTP/1.1" 200 59305
+WARNING 2024-04-21 17:38:40,473 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:39:36,187 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:39:38,411 basehttp 212 "GET /register/ HTTP/1.1" 200 6756
+WARNING 2024-04-21 17:39:38,441 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:39:42,271 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:39:43,653 basehttp 212 "GET /register/ HTTP/1.1" 200 6756
+INFO 2024-04-21 17:39:58,806 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:40:00,125 basehttp 212 "GET /register/ HTTP/1.1" 200 6641
+INFO 2024-04-21 17:40:16,830 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:40:19,412 basehttp 212 "GET /register/ HTTP/1.1" 200 6756
+WARNING 2024-04-21 17:40:19,441 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:42:13,788 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:42:14,894 basehttp 212 "GET /register/ HTTP/1.1" 200 6480
+WARNING 2024-04-21 17:42:14,913 log 241 Not Found: /register/logo.png
+WARNING 2024-04-21 17:42:14,913 basehttp 212 "GET /register/logo.png HTTP/1.1" 404 3620
+WARNING 2024-04-21 17:42:14,919 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:43:41,259 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:43:43,320 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:43:44,767 basehttp 212 "GET /register/ HTTP/1.1" 200 6464
+INFO 2024-04-21 17:43:44,780 basehttp 212 "GET /static/img/logo.png HTTP/1.1" 200 23380
+WARNING 2024-04-21 17:43:44,797 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:43:56,488 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:43:58,454 basehttp 212 "GET /register/ HTTP/1.1" 200 6389
+WARNING 2024-04-21 17:43:58,476 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:44:01,422 basehttp 212 "GET /register/ HTTP/1.1" 200 6389
+INFO 2024-04-21 17:45:59,767 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:46:02,173 basehttp 212 "GET /register/ HTTP/1.1" 200 6699
+WARNING 2024-04-21 17:46:04,607 log 241 Not Found: /register/login.html
+WARNING 2024-04-21 17:46:04,607 basehttp 212 "GET /register/login.html HTTP/1.1" 404 3626
+WARNING 2024-04-21 17:46:36,506 log 241 Not Found: /register/index.html
+WARNING 2024-04-21 17:46:36,506 basehttp 212 "GET /register/index.html HTTP/1.1" 404 3626
+INFO 2024-04-21 17:46:49,729 basehttp 212 "GET / HTTP/1.1" 200 19327
+WARNING 2024-04-21 17:46:50,748 log 241 Not Found: /indes
+WARNING 2024-04-21 17:46:50,749 basehttp 212 "GET /indes HTTP/1.1" 404 3584
+INFO 2024-04-21 17:46:53,193 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:46:54,657 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:46:57,370 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 17:46:57,401 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:46:59,751 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 17:46:59,780 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:47:03,661 basehttp 212 "GET /login/ HTTP/1.1" 200 3196
+INFO 2024-04-21 17:49:09,406 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:49:11,355 basehttp 212 "GET /login/ HTTP/1.1" 200 3155
+WARNING 2024-04-21 17:49:11,392 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:49:28,633 basehttp 212 "GET /login/ HTTP/1.1" 200 2979
+INFO 2024-04-21 17:54:00,823 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:54:44,477 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:54:48,345 basehttp 212 "GET /login/ HTTP/1.1" 200 3118
+WARNING 2024-04-21 17:54:48,379 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:55:40,590 autoreload 668 Watching for file changes with StatReloader
+ERROR 2024-04-21 17:55:43,130 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 84, in get
+    return render(request,'login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+ERROR 2024-04-21 17:55:43,133 basehttp 212 "GET /login/ HTTP/1.1" 500 131784
+INFO 2024-04-21 17:56:21,200 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:56:22,603 basehttp 212 "GET /login/ HTTP/1.1" 200 3025
+WARNING 2024-04-21 17:56:22,640 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:56:24,325 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:56:26,446 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 17:58:49,537 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:58:50,610 basehttp 212 "GET /login/ HTTP/1.1" 200 2986
+WARNING 2024-04-21 17:58:50,636 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 17:59:47,621 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 17:59:48,968 basehttp 212 "GET /login/ HTTP/1.1" 200 3057
+WARNING 2024-04-21 17:59:48,993 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 18:00:50,628 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:00:52,131 basehttp 212 "GET /login/ HTTP/1.1" 200 3008
+WARNING 2024-04-21 18:00:52,160 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 18:01:00,442 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:01:01,701 basehttp 212 "GET /login/ HTTP/1.1" 200 2966
+INFO 2024-04-21 18:01:25,866 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:01:27,329 basehttp 212 "GET /login/ HTTP/1.1" 200 2977
+INFO 2024-04-21 18:02:27,963 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:02:29,820 basehttp 212 "GET /login/ HTTP/1.1" 200 2852
+INFO 2024-04-21 18:02:41,475 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:05:41,469 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:05:43,229 basehttp 212 "GET /login/ HTTP/1.1" 200 2629
+WARNING 2024-04-21 18:05:43,263 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:05:43,263 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:05:43,268 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:05:43,273 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:17:18,962 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:17:20,499 basehttp 212 "GET /login/ HTTP/1.1" 200 2569
+WARNING 2024-04-21 18:17:20,539 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:17:20,540 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:17:20,544 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:17:20,548 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:19:10,084 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:19:15,543 basehttp 212 "GET /login/ HTTP/1.1" 200 2569
+WARNING 2024-04-21 18:19:15,589 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:19:15,589 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:19:15,595 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:19:15,599 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:19:16,593 basehttp 212 "GET /login/ HTTP/1.1" 200 2569
+WARNING 2024-04-21 18:19:16,618 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:19:16,623 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:19:16,629 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:19:19,385 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:19:22,861 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:19:31,289 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:19:39,300 basehttp 212 "GET /login/ HTTP/1.1" 200 2569
+WARNING 2024-04-21 18:19:39,326 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:19:39,332 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:19:39,337 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:19:48,284 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:19:54,064 basehttp 212 "GET / HTTP/1.1" 200 19327
+WARNING 2024-04-21 18:19:54,172 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 18:19:54,172 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-21 18:19:59,398 basehttp 212 "GET /login/ HTTP/1.1" 200 2569
+WARNING 2024-04-21 18:19:59,485 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:19:59,489 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:19:59,492 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:19:59,495 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:21:02,899 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:21:55,936 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:21:57,596 basehttp 212 "GET /login/ HTTP/1.1" 200 2550
+WARNING 2024-04-21 18:21:57,625 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:21:57,625 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:21:57,649 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:21:57,654 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:22:08,663 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:22:10,318 basehttp 212 "GET /login/ HTTP/1.1" 200 1087
+INFO 2024-04-21 18:22:18,208 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:22:19,640 basehttp 212 "GET /login/ HTTP/1.1" 200 2351
+WARNING 2024-04-21 18:22:19,658 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:22:19,687 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:22:19,691 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:23:04,815 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:23:06,197 basehttp 212 "GET /login/ HTTP/1.1" 200 2218
+WARNING 2024-04-21 18:23:06,218 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:23:06,248 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:23:06,252 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:23:20,712 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:23:22,043 basehttp 212 "GET /login/ HTTP/1.1" 200 466
+INFO 2024-04-21 18:23:37,458 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:23:38,728 basehttp 212 "GET /login/ HTTP/1.1" 200 483
+INFO 2024-04-21 18:24:15,321 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:24:16,526 basehttp 212 "GET /login/ HTTP/1.1" 200 2496
+WARNING 2024-04-21 18:24:16,552 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:24:16,580 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:24:16,585 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:24:26,142 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:24:27,360 basehttp 212 "GET /login/ HTTP/1.1" 200 2414
+WARNING 2024-04-21 18:24:27,374 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:24:27,401 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:24:27,406 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:25:49,953 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:25:51,359 basehttp 212 "GET /login/ HTTP/1.1" 200 2575
+WARNING 2024-04-21 18:25:51,391 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:25:51,415 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:25:51,420 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:25:58,021 basehttp 212 "GET /login/ HTTP/1.1" 200 2575
+WARNING 2024-04-21 18:25:58,041 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:25:58,078 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:25:58,083 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:27:06,559 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:27:08,204 basehttp 212 "GET /login/ HTTP/1.1" 200 494
+INFO 2024-04-21 18:28:34,225 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:28:34,260 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:28:34,291 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:28:34,295 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:29:10,048 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:29:12,316 basehttp 212 "GET /login/ HTTP/1.1" 200 1504
+WARNING 2024-04-21 18:29:12,333 log 241 Not Found: /login/logo.png
+WARNING 2024-04-21 18:29:12,333 basehttp 212 "GET /login/logo.png HTTP/1.1" 404 3611
+WARNING 2024-04-21 18:29:12,361 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:29:12,365 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:29:12,369 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:29:40,218 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:34:30,680 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:34:34,050 basehttp 212 "GET /login/ HTTP/1.1" 200 2595
+WARNING 2024-04-21 18:34:34,082 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:34:34,127 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:34:34,133 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:36:03,771 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:36:23,470 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:36:29,923 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:36:29,953 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:36:29,993 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:36:29,998 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:36:31,491 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:36:31,505 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:36:31,545 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:36:31,549 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:36:43,108 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:36:45,672 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:36:45,696 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:36:45,724 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:36:45,728 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:37:21,819 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:37:25,223 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:37:25,247 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:37:25,273 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:37:25,277 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:37:28,027 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:37:28,047 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:37:28,082 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:37:28,088 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:40:13,740 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:40:15,559 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:40:24,014 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:40:29,958 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:40:29,991 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:40:30,055 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:40:30,067 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:40:30,086 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:40:30,094 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 18:40:30,094 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+WARNING 2024-04-21 18:40:32,218 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+WARNING 2024-04-21 18:41:18,076 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+WARNING 2024-04-21 18:42:00,839 basehttp 212 "GET /static/image/111.jpg HTTP/1.1" 404 1798
+INFO 2024-04-21 18:42:17,698 basehttp 212 "GET /static/img/111.jpg HTTP/1.1" 200 160313
+WARNING 2024-04-21 18:42:52,060 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 404 1792
+INFO 2024-04-21 18:45:12,971 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:45:16,033 basehttp 212 "GET /login/ HTTP/1.1" 200 2578
+WARNING 2024-04-21 18:45:16,113 basehttp 212 "GET /static/static/css/logo.png HTTP/1.1" 404 1816
+INFO 2024-04-21 18:45:16,114 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 200 160313
+WARNING 2024-04-21 18:45:16,118 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:45:16,121 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:45:16,124 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:45:52,428 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 18:46:28,361 basehttp 212 "GET /login/ HTTP/1.1" 200 2578
+WARNING 2024-04-21 18:46:28,372 basehttp 212 "GET /static/static/css/logo.png HTTP/1.1" 404 1816
+WARNING 2024-04-21 18:46:28,393 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+WARNING 2024-04-21 18:46:28,402 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:46:28,418 basehttp 212 "GET /static/static/css/logo.png HTTP/1.1" 404 1816
+WARNING 2024-04-21 18:46:28,418 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:46:28,424 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:46:31,212 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:46:32,259 basehttp 212 "GET /login/ HTTP/1.1" 200 2578
+WARNING 2024-04-21 18:46:32,279 basehttp 212 "GET /static/static/css/logo.png HTTP/1.1" 404 1816
+WARNING 2024-04-21 18:46:32,293 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+WARNING 2024-04-21 18:46:32,297 basehttp 212 "GET /static/static/css/logo.png HTTP/1.1" 404 1816
+WARNING 2024-04-21 18:46:32,305 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:46:32,313 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:46:32,318 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:46:53,728 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:47:04,770 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:47:20,068 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:47:21,938 basehttp 212 "GET /login/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:47:21,977 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+WARNING 2024-04-21 18:47:21,983 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:47:21,988 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:47:21,992 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:49:29,619 log 241 Not Found: /login1
+WARNING 2024-04-21 18:49:29,620 basehttp 212 "GET /login1 HTTP/1.1" 404 3587
+INFO 2024-04-21 18:50:02,624 autoreload 266 /Users/bloomberg/awvl/blog/users/urls.py changed, reloading.
+INFO 2024-04-21 18:50:02,936 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:50:03,817 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:50:06,021 basehttp 212 "GET /login1 HTTP/1.1" 301 0
+INFO 2024-04-21 18:50:06,029 basehttp 212 "GET /login1/ HTTP/1.1" 200 2571
+WARNING 2024-04-21 18:50:06,053 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:50:06,057 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:50:06,062 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:50:13,132 autoreload 266 /Users/bloomberg/awvl/blog/users/urls.py changed, reloading.
+INFO 2024-04-21 18:50:13,355 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:50:14,513 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:51:31,883 autoreload 668 Watching for file changes with StatReloader
+WARNING 2024-04-21 18:51:33,600 log 241 Not Found: /login1/
+WARNING 2024-04-21 18:51:33,601 basehttp 212 "GET /login1/ HTTP/1.1" 404 3590
+INFO 2024-04-21 18:51:35,896 basehttp 212 "GET /login/ HTTP/1.1" 200 2548
+WARNING 2024-04-21 18:51:35,927 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:51:35,931 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:51:35,937 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:52:09,003 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:52:10,253 basehttp 212 "GET /login/ HTTP/1.1" 200 2501
+WARNING 2024-04-21 18:52:10,276 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:52:10,284 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:52:10,289 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:53:20,436 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:53:21,845 basehttp 212 "GET /login/ HTTP/1.1" 200 2460
+WARNING 2024-04-21 18:53:21,873 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:53:21,878 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:53:21,882 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:55:53,144 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:55:55,563 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+WARNING 2024-04-21 18:55:55,594 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:55:55,594 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:55:55,615 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:55:55,620 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:55:55,624 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:56:50,163 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:57:00,770 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+WARNING 2024-04-21 18:57:00,788 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:57:00,789 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:57:00,803 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:57:00,808 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:57:00,813 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 18:57:08,925 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+WARNING 2024-04-21 18:57:08,939 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:57:08,939 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:57:08,952 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:57:08,957 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:57:08,962 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:57:12,245 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:57:12,246 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:57:12,262 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 18:57:21,155 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 18:57:34,787 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:57:38,980 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:57:41,685 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+INFO 2024-04-21 18:57:41,706 basehttp 212 "GET /static/css/all.min.css HTTP/1.1" 200 59305
+INFO 2024-04-21 18:57:41,707 basehttp 212 "GET /static/img/logo.png HTTP/1.1" 200 23380
+WARNING 2024-04-21 18:57:41,711 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:57:41,711 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:57:41,722 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:57:41,728 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:57:41,733 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:57:41,750 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:57:41,755 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-21 18:57:41,759 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-21 18:57:41,764 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:57:41,768 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:58:09,253 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:09,254 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:09,284 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 18:58:09,284 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+WARNING 2024-04-21 18:58:15,064 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:15,065 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:30,325 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:30,326 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:34,795 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:34,795 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:39,541 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:39,542 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:52,756 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:52,756 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:58:58,425 log 241 Bad Request: /login/
+WARNING 2024-04-21 18:58:58,426 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-21 18:59:16,628 log 241 Not Found: /re
+WARNING 2024-04-21 18:59:16,628 basehttp 212 "GET /re HTTP/1.1" 404 3575
+INFO 2024-04-21 18:59:20,570 basehttp 212 "GET /register/ HTTP/1.1" 200 6700
+INFO 2024-04-21 18:59:20,590 basehttp 212 "GET /static/js/register2.js HTTP/1.1" 304 0
+INFO 2024-04-21 18:59:38,540 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 18:59:38,559 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:59:40,509 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 18:59:40,537 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:59:41,289 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+WARNING 2024-04-21 18:59:41,313 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:59:41,314 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:59:41,331 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:59:41,340 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:59:41,352 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:59:41,357 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:59:41,362 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-21 18:59:41,368 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-21 18:59:41,373 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:59:41,378 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-21 18:59:54,500 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-21 18:59:54,522 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:59:56,464 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 18:59:56,491 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 18:59:58,649 basehttp 212 "GET /login/ HTTP/1.1" 200 2444
+WARNING 2024-04-21 18:59:58,672 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 18:59:58,672 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 18:59:58,687 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:59:58,693 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 18:59:58,707 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:59:58,712 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-21 18:59:58,716 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-21 18:59:58,721 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-21 18:59:58,726 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-21 18:59:58,732 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-21 19:02:07,504 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:02:12,998 basehttp 212 "GET /login/ HTTP/1.1" 200 4347
+WARNING 2024-04-21 19:02:13,038 log 241 Not Found: /login/login.css
+WARNING 2024-04-21 19:02:13,038 basehttp 212 "GET /login/login.css HTTP/1.1" 404 3614
+WARNING 2024-04-21 19:02:13,053 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:02:13,055 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:02:13,057 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:02:13,061 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:02:13,084 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:02:13,089 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:02:13,094 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-21 19:02:13,098 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-21 19:02:13,103 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:02:13,107 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-21 19:02:36,713 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:02:39,100 basehttp 212 "GET /login/ HTTP/1.1" 200 4303
+WARNING 2024-04-21 19:02:39,157 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:02:39,158 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:02:39,158 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:02:39,164 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:02:39,186 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:02:39,195 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:02:39,201 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-21 19:02:39,205 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-21 19:02:39,210 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:02:39,214 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:02:42,729 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 19:03:45,710 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:03:47,308 basehttp 212 "GET /login/ HTTP/1.1" 200 4303
+WARNING 2024-04-21 19:03:47,387 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:03:47,389 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:03:47,389 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:03:47,392 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:03:47,395 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:03:48,175 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 19:03:48,176 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+WARNING 2024-04-21 19:03:50,330 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 19:05:12,089 basehttp 212 "GET /login/ HTTP/1.1" 200 4303
+WARNING 2024-04-21 19:05:12,130 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:05:12,130 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+WARNING 2024-04-21 19:05:12,130 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:05:12,164 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:05:12,168 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:05:12,172 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:05:23,383 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:05:23,384 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:05:27,802 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:05:27,802 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:05:41,031 log 241 Not Found: /templates/111.jpg
+WARNING 2024-04-21 19:05:41,031 basehttp 212 "GET /templates/111.jpg HTTP/1.1" 404 3620
+WARNING 2024-04-21 19:05:57,557 basehttp 212 "GET /static/111.jpg HTTP/1.1" 404 1780
+INFO 2024-04-21 19:11:14,480 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:11:17,525 basehttp 212 "GET /login/ HTTP/1.1" 200 4303
+WARNING 2024-04-21 19:11:17,570 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:11:17,570 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:11:17,587 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:11:17,590 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:11:17,593 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:11:18,729 basehttp 212 "GET /login/ HTTP/1.1" 200 4303
+WARNING 2024-04-21 19:11:18,774 log 241 Not Found: /login/111.jpg
+WARNING 2024-04-21 19:11:18,774 basehttp 212 "GET /login/111.jpg HTTP/1.1" 404 3608
+WARNING 2024-04-21 19:11:18,779 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:11:18,783 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:11:18,802 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:13:05,374 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:13:21,101 basehttp 212 "GET /login/ HTTP/1.1" 200 2400
+WARNING 2024-04-21 19:13:21,143 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:13:21,148 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:13:21,153 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:14:01,931 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:14:01,949 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:14:01,954 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:14:01,958 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:14:08,164 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:14:38,739 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:14:40,494 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:14:40,521 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:14:40,528 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:14:40,533 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:15:03,112 log 241 Bad Request: /login/
+WARNING 2024-04-21 19:15:03,113 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+INFO 2024-04-21 19:15:14,341 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:15:14,359 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:15:16,236 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:15:16,261 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:15:17,854 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:15:17,871 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:15:19,534 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:15:29,819 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:15:29,890 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:15:29,894 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:15:29,897 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:15:34,266 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:15:34,302 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:15:34,337 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:15:34,342 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:15:43,242 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:15:46,162 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:15:46,191 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:16:59,452 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:16:59,477 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:17:02,106 basehttp 212 "GET /center/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:17:02,112 basehttp 212 "GET /login/?next=/center/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:17:02,138 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:17:02,147 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:17:02,152 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:17:06,479 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:17:06,510 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:17:18,962 basehttp 212 "GET /writeblog/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:17:18,965 basehttp 212 "GET /login/?next=/writeblog/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:17:18,986 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:17:18,992 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:17:18,998 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:17:20,787 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:17:20,815 basehttp 212 "GET / HTTP/1.1" 200 19327
+WARNING 2024-04-21 19:18:30,300 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 19:19:23,684 basehttp 212 "GET / HTTP/1.1" 200 19327
+WARNING 2024-04-21 19:19:23,801 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 19:19:23,801 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-21 19:19:27,219 basehttp 212 "GET /center/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:19:27,222 basehttp 212 "GET /login/?next=/center/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:19:27,259 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:19:27,263 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:19:27,268 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:19:33,377 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:19:33,472 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:19:33,476 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:19:33,479 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:19:52,460 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:19:52,474 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:19:54,605 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 19:19:54,633 basehttp 212 "GET / HTTP/1.1" 200 19327
+INFO 2024-04-21 19:19:56,641 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:19:56,752 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:19:56,756 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:19:56,759 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:22:01,349 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:22:01,378 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:22:01,417 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:22:01,423 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:22:22,272 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:22:23,618 basehttp 212 "GET /login/ HTTP/1.1" 200 2456
+WARNING 2024-04-21 19:22:23,643 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:22:23,670 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:22:23,675 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:22:26,438 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-21 19:23:03,131 basehttp 212 "GET /login/ HTTP/1.1" 200 2413
+WARNING 2024-04-21 19:23:03,149 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:23:03,181 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:23:03,186 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:23:31,801 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 19:23:37,473 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-21 19:23:37,504 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:23:37,531 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:23:37,536 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 19:36:31,572 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-21 19:36:31,610 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 19:36:31,614 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 19:36:31,618 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-21 19:36:31,626 log 241 Not Found: /favicon.ico
+WARNING 2024-04-21 19:36:31,627 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-21 22:13:53,069 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 22:13:53,079 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-21 22:13:55,086 basehttp 212 "GET /register/ HTTP/1.1" 200 6608
+INFO 2024-04-21 22:13:55,096 basehttp 212 "GET /static/js/register2.js HTTP/1.1" 304 0
+WARNING 2024-04-21 22:13:57,471 log 241 Not Found: /register/login.html
+WARNING 2024-04-21 22:13:57,472 basehttp 212 "GET /register/login.html HTTP/1.1" 404 3626
+INFO 2024-04-21 22:14:01,813 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 22:14:01,846 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 22:14:03,943 basehttp 212 "GET /register/ HTTP/1.1" 200 6608
+INFO 2024-04-21 22:14:07,798 basehttp 212 "GET /register/ HTTP/1.1" 200 6608
+INFO 2024-04-21 22:21:20,307 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:21:23,524 basehttp 212 "GET /register/ HTTP/1.1" 200 6906
+INFO 2024-04-21 22:21:23,535 basehttp 212 "GET /static/css/register.css HTTP/1.1" 200 2613
+INFO 2024-04-21 22:22:00,292 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:22:01,526 basehttp 212 "GET /register/ HTTP/1.1" 200 6402
+INFO 2024-04-21 22:22:21,230 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:22:22,941 basehttp 212 "GET /register/ HTTP/1.1" 200 6364
+INFO 2024-04-21 22:23:15,006 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:23:16,620 basehttp 212 "GET /register/ HTTP/1.1" 200 6372
+INFO 2024-04-21 22:24:06,327 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:24:08,401 basehttp 212 "GET /register/ HTTP/1.1" 200 6470
+INFO 2024-04-21 22:26:27,979 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:26:30,276 basehttp 212 "GET /register/ HTTP/1.1" 200 6615
+INFO 2024-04-21 22:29:10,818 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:29:12,249 basehttp 212 "GET /register/ HTTP/1.1" 200 6782
+INFO 2024-04-21 22:29:13,579 basehttp 212 "GET /register/ HTTP/1.1" 200 6782
+INFO 2024-04-21 22:30:04,852 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:30:14,733 basehttp 212 "GET /register/ HTTP/1.1" 200 7354
+INFO 2024-04-21 22:32:03,817 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:32:05,476 basehttp 212 "GET /register/ HTTP/1.1" 200 7398
+INFO 2024-04-21 22:32:06,721 basehttp 212 "GET /register/ HTTP/1.1" 200 7398
+INFO 2024-04-21 22:34:22,642 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:34:25,227 basehttp 212 "GET /register/ HTTP/1.1" 200 6463
+INFO 2024-04-21 22:38:54,791 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:38:55,936 basehttp 212 "GET /register/ HTTP/1.1" 200 6436
+INFO 2024-04-21 22:38:57,083 basehttp 212 "GET /register/ HTTP/1.1" 200 6436
+INFO 2024-04-21 22:43:51,855 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:43:55,506 basehttp 212 "GET /register/ HTTP/1.1" 200 5611
+INFO 2024-04-21 22:43:55,515 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-21 22:46:22,681 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:46:25,485 basehttp 212 "GET /register/ HTTP/1.1" 200 4709
+INFO 2024-04-21 22:48:31,752 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 22:48:32,052 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:48:45,339 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 22:48:45,611 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:49:06,029 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:49:06,279 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:49:14,486 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:49:14,754 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:49:29,067 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:49:29,353 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:50:33,364 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:50:33,581 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:50:40,794 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:50:41,002 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:50:57,276 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:50:57,491 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:50:58,649 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:50:58,849 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:51:04,039 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:51:04,232 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:51:06,364 autoreload 266 /Users/bloomberg/awvl/blog/users/models.py changed, reloading.
+INFO 2024-04-21 22:51:06,571 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:51:40,134 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 22:51:40,399 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:51:52,880 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:55:16,316 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:55:17,907 basehttp 212 "GET /register/ HTTP/1.1" 200 4989
+INFO 2024-04-21 22:57:25,870 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:57:28,460 basehttp 212 "GET /register/ HTTP/1.1" 200 5547
+INFO 2024-04-21 22:57:36,128 basehttp 212 "GET /register/ HTTP/1.1" 200 5547
+INFO 2024-04-21 22:58:14,605 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 22:58:15,898 basehttp 212 "GET /register/ HTTP/1.1" 200 5708
+INFO 2024-04-21 22:58:17,103 basehttp 212 "GET /register/ HTTP/1.1" 200 5708
+INFO 2024-04-21 22:58:24,506 basehttp 212 "GET /register/ HTTP/1.1" 200 5708
+INFO 2024-04-21 22:58:36,281 basehttp 212 "GET /register/ HTTP/1.1" 200 3674
+INFO 2024-04-21 23:03:26,011 basehttp 212 "GET /register/ HTTP/1.1" 200 5708
+INFO 2024-04-21 23:03:48,927 basehttp 212 "GET /register/ HTTP/1.1" 200 5695
+INFO 2024-04-21 23:03:50,567 basehttp 212 "GET /register/ HTTP/1.1" 200 5695
+INFO 2024-04-21 23:04:06,993 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:04:08,112 basehttp 212 "GET /register/ HTTP/1.1" 200 5688
+INFO 2024-04-21 23:04:08,121 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-21 23:04:39,196 basehttp 212 "GET /register/ HTTP/1.1" 200 5679
+ERROR 2024-04-21 23:04:59,911 log 241 Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 42, in post
+    user=User.objects.create_user(username=username,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+ERROR 2024-04-21 23:04:59,913 basehttp 212 "POST /register/ HTTP/1.1" 500 91388
+INFO 2024-04-21 23:05:40,238 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:06:02,048 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:06:03,500 basehttp 212 "GET /register/ HTTP/1.1" 200 5502
+ERROR 2024-04-21 23:06:17,157 log 241 Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 42, in post
+    user=User.objects.create_user(username=username,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/contrib/auth/models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+ERROR 2024-04-21 23:06:17,159 basehttp 212 "POST /register/ HTTP/1.1" 500 91374
+INFO 2024-04-21 23:06:59,386 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:07:00,639 basehttp 212 "GET /register/ HTTP/1.1" 200 5734
+INFO 2024-04-21 23:07:11,788 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 23:07:11,808 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 23:07:14,022 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 23:07:14,052 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 23:07:15,482 basehttp 212 "GET /register/ HTTP/1.1" 200 5734
+INFO 2024-04-21 23:14:46,723 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:14:59,033 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 23:14:59,257 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:15:05,465 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 23:15:05,686 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:15:10,911 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 23:15:11,163 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:15:16,359 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 23:15:16,573 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:15:28,840 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-21 23:15:29,064 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:16:14,447 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:16:19,401 basehttp 212 "GET /register/ HTTP/1.1" 200 7116
+INFO 2024-04-21 23:16:59,803 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:17:03,139 basehttp 212 "GET /register/ HTTP/1.1" 200 7118
+INFO 2024-04-21 23:18:09,470 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:18:30,329 basehttp 212 "GET /register/ HTTP/1.1" 200 7101
+INFO 2024-04-21 23:19:44,450 basehttp 212 "GET /register/ HTTP/1.1" 200 7078
+INFO 2024-04-21 23:20:46,788 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:20:49,419 basehttp 212 "GET /register/ HTTP/1.1" 200 6847
+INFO 2024-04-21 23:20:54,349 basehttp 212 "GET /register/ HTTP/1.1" 200 6847
+INFO 2024-04-21 23:22:42,668 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:22:45,911 basehttp 212 "GET /register/ HTTP/1.1" 200 5528
+INFO 2024-04-21 23:23:05,696 basehttp 212 "GET /register/ HTTP/1.1" 200 5516
+INFO 2024-04-21 23:23:07,053 basehttp 212 "GET /register/ HTTP/1.1" 200 5516
+INFO 2024-04-21 23:24:20,870 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:24:22,290 basehttp 212 "GET /register/ HTTP/1.1" 200 5409
+INFO 2024-04-21 23:24:23,328 basehttp 212 "GET /register/ HTTP/1.1" 200 5409
+INFO 2024-04-21 23:24:54,913 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:24:58,527 basehttp 212 "GET /register/ HTTP/1.1" 200 5239
+INFO 2024-04-21 23:25:12,969 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 23:25:12,988 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 23:25:15,181 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-21 23:25:15,207 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 23:25:16,121 basehttp 212 "GET /register/ HTTP/1.1" 200 5239
+INFO 2024-04-21 23:26:54,680 basehttp 212 "GET /register/ HTTP/1.1" 200 5255
+INFO 2024-04-21 23:26:54,691 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-21 23:30:52,046 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:30:53,599 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:31:13,728 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:31:15,535 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:32:12,600 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:32:18,652 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:32:24,602 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:32:48,542 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:33:47,328 basehttp 212 "GET /register/ HTTP/1.1" 200 7670
+INFO 2024-04-21 23:33:48,323 basehttp 212 "GET /register/ HTTP/1.1" 200 7670
+INFO 2024-04-21 23:33:51,510 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:33:53,260 basehttp 212 "GET /register/ HTTP/1.1" 200 7670
+INFO 2024-04-21 23:33:55,740 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-21 23:33:55,817 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 23:33:55,820 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 23:33:55,824 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 23:33:58,114 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-21 23:33:58,197 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-21 23:33:58,201 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-21 23:33:58,204 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-21 23:33:59,442 basehttp 212 "GET /register/ HTTP/1.1" 200 7670
+INFO 2024-04-21 23:34:07,665 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:34:08,959 basehttp 212 "GET /register/ HTTP/1.1" 200 7837
+INFO 2024-04-21 23:34:20,414 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:34:21,654 basehttp 212 "GET /register/ HTTP/1.1" 200 7245
+INFO 2024-04-21 23:34:44,178 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:34:59,308 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:35:00,885 basehttp 212 "GET /register/ HTTP/1.1" 200 7917
+INFO 2024-04-21 23:35:48,728 basehttp 212 "GET /register/ HTTP/1.1" 200 8091
+INFO 2024-04-21 23:37:09,861 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:37:10,919 basehttp 212 "GET /register/ HTTP/1.1" 200 7967
+INFO 2024-04-21 23:41:01,080 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:41:09,401 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-21 23:49:10,469 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-21 23:50:43,234 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-21 23:52:27,462 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:52:31,256 basehttp 212 "GET /register/ HTTP/1.1" 200 5949
+INFO 2024-04-21 23:52:31,267 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-21 23:52:44,005 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-21 23:52:44,024 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-21 23:53:27,657 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:53:30,326 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-21 23:54:01,990 basehttp 212 "GET /register/ HTTP/1.1" 200 7919
+INFO 2024-04-21 23:54:43,423 basehttp 212 "GET /register/ HTTP/1.1" 200 7925
+INFO 2024-04-21 23:56:37,198 basehttp 212 "GET /register/ HTTP/1.1" 200 7979
+INFO 2024-04-21 23:57:06,901 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-21 23:57:08,480 basehttp 212 "GET /register/ HTTP/1.1" 200 7972
+INFO 2024-04-21 23:57:33,831 basehttp 212 "GET /register/ HTTP/1.1" 200 7882
+INFO 2024-04-21 23:57:41,054 basehttp 212 "GET /register/ HTTP/1.1" 200 7882
+INFO 2024-04-22 00:00:09,485 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 00:00:11,840 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-22 00:01:30,396 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-22 00:04:11,909 basehttp 212 "GET /register/ HTTP/1.1" 200 4308
+INFO 2024-04-22 00:04:30,000 basehttp 212 "GET /register/ HTTP/1.1" 200 4315
+INFO 2024-04-22 00:04:42,928 basehttp 212 "GET /register/ HTTP/1.1" 200 4226
+INFO 2024-04-22 00:06:16,459 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 00:06:18,232 basehttp 212 "GET /register/ HTTP/1.1" 200 7918
+INFO 2024-04-22 00:06:18,244 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 200 1674
+WARNING 2024-04-22 00:08:21,833 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-22 00:09:19,484 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 00:09:20,915 basehttp 212 "GET /register/ HTTP/1.1" 200 7846
+INFO 2024-04-22 00:09:20,925 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+WARNING 2024-04-22 00:09:20,961 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-22 00:09:50,742 basehttp 212 "GET /register/ HTTP/1.1" 200 7922
+WARNING 2024-04-22 00:09:50,780 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-22 00:10:13,680 basehttp 212 "GET /register/ HTTP/1.1" 200 7922
+INFO 2024-04-22 00:10:13,688 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 00:10:27,902 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 00:10:27,922 basehttp 212 "GET / HTTP/1.1" 200 19146
+WARNING 2024-04-22 00:12:11,905 log 241 Forbidden (CSRF token from POST incorrect.): /register/
+WARNING 2024-04-22 00:12:11,905 basehttp 212 "POST /register/ HTTP/1.1" 403 2517
+INFO 2024-04-22 00:12:15,345 basehttp 212 "GET /register/ HTTP/1.1" 200 7922
+INFO 2024-04-22 00:12:21,995 basehttp 212 "GET /register/ HTTP/1.1" 200 7922
+INFO 2024-04-22 00:12:22,005 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 00:13:14,377 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 00:13:18,206 basehttp 212 "GET /register/ HTTP/1.1" 200 7926
+INFO 2024-04-22 00:13:33,305 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 00:13:33,306 basehttp 81 - Broken pipe from ('127.0.0.1', 61983)
+ERROR 2024-04-22 00:13:33,582 views 53 (1062, "Duplicate entry 'qwrwqrqwrqrw' for key 'tb_users.tb_users_username_c1d00e0e_uniq'")
+WARNING 2024-04-22 00:13:33,582 log 241 Bad Request: /register/
+WARNING 2024-04-22 00:13:33,582 basehttp 212 "POST /register/ HTTP/1.1" 400 12
+INFO 2024-04-22 00:13:51,448 basehttp 212 "GET /register/ HTTP/1.1" 200 7926
+INFO 2024-04-22 00:13:51,457 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 00:14:17,173 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 00:14:17,192 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 00:14:22,622 basehttp 212 "GET /register/ HTTP/1.1" 200 7926
+INFO 2024-04-22 00:15:04,891 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 00:15:04,904 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:14:57,009 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:15:10,691 basehttp 212 "GET /register/ HTTP/1.1" 200 8077
+INFO 2024-04-22 01:15:10,703 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 01:15:10,704 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-22 01:15:13,116 basehttp 212 "GET /register/ HTTP/1.1" 200 8077
+INFO 2024-04-22 01:16:02,732 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:16:02,752 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:16:02,760 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+INFO 2024-04-22 01:16:36,059 basehttp 212 "GET /register/ HTTP/1.1" 200 8055
+INFO 2024-04-22 01:17:12,285 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:17:15,059 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:17:16,800 basehttp 212 "GET /register/ HTTP/1.1" 200 8056
+INFO 2024-04-22 01:17:33,478 basehttp 212 "GET /register/ HTTP/1.1" 200 8055
+INFO 2024-04-22 01:19:42,156 basehttp 212 "GET /register/ HTTP/1.1" 200 8055
+INFO 2024-04-22 01:19:53,573 basehttp 212 "GET /register/ HTTP/1.1" 200 8055
+INFO 2024-04-22 01:20:16,659 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:20:16,679 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:20:27,452 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-22 01:20:27,542 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:20:27,546 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:20:27,549 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:26:58,685 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:27:17,485 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-22 01:27:17,527 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:27:17,532 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:27:17,537 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:27:20,928 basehttp 212 "GET /register/ HTTP/1.1" 200 8376
+INFO 2024-04-22 01:27:20,939 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+WARNING 2024-04-22 01:27:56,675 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-22 01:29:25,422 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:29:26,950 basehttp 212 "GET /register/ HTTP/1.1" 200 8279
+INFO 2024-04-22 01:31:03,749 basehttp 212 "GET /register/ HTTP/1.1" 200 8275
+INFO 2024-04-22 01:31:48,152 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:31:50,704 basehttp 212 "GET /register/ HTTP/1.1" 200 8249
+INFO 2024-04-22 01:32:32,827 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:32:36,804 basehttp 212 "GET /register/ HTTP/1.1" 200 8205
+INFO 2024-04-22 01:33:16,395 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:33:17,961 basehttp 212 "GET /register/ HTTP/1.1" 200 8213
+INFO 2024-04-22 01:34:03,679 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:34:04,873 basehttp 212 "GET /register/ HTTP/1.1" 200 8213
+INFO 2024-04-22 01:36:22,397 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:36:24,266 basehttp 212 "GET /register/ HTTP/1.1" 200 8205
+INFO 2024-04-22 01:36:24,276 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 01:36:46,022 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:36:46,039 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:38:12,483 basehttp 212 "GET /register/ HTTP/1.1" 200 8197
+INFO 2024-04-22 01:39:22,080 basehttp 212 "GET /register/ HTTP/1.1" 200 8197
+WARNING 2024-04-22 01:39:44,586 basehttp 212 "GET /static/js/axios.min.map HTTP/1.1" 404 1807
+INFO 2024-04-22 01:41:45,869 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:41:47,019 basehttp 212 "GET /register/ HTTP/1.1" 200 8182
+INFO 2024-04-22 01:42:04,660 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:42:04,678 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:42:06,440 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:42:06,464 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:42:14,140 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:42:14,172 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:42:19,003 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:42:19,033 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:42:21,724 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:42:31,456 basehttp 212 "GET /register/ HTTP/1.1" 200 8182
+INFO 2024-04-22 01:42:32,479 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-22 01:42:32,564 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:42:32,567 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:42:32,571 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:42:33,479 basehttp 212 "GET /register/ HTTP/1.1" 200 8182
+INFO 2024-04-22 01:44:48,056 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:44:54,771 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:45:23,564 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:45:53,152 basehttp 212 "POST /register/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:45:53,171 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:45:55,299 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:45:55,323 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:45:57,348 basehttp 212 "GET /login/ HTTP/1.1" 200 2473
+WARNING 2024-04-22 01:45:57,440 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:45:57,443 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:45:57,447 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:46:09,210 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:46:09,211 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:46:10,868 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:46:10,873 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:46:19,372 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:46:19,373 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:46:20,528 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:46:26,406 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:46:26,407 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:46:46,225 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:46:46,226 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:46:55,777 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:46:55,777 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+INFO 2024-04-22 01:47:31,889 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-22 01:47:32,196 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:47:35,377 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-22 01:47:35,578 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:47:43,804 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-22 01:47:44,007 autoreload 668 Watching for file changes with StatReloader
+WARNING 2024-04-22 01:47:58,059 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:47:58,060 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:48:07,792 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:48:07,792 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:48:18,270 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:48:18,271 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+WARNING 2024-04-22 01:49:07,933 log 241 Bad Request: /login/
+WARNING 2024-04-22 01:49:07,935 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+INFO 2024-04-22 01:49:18,611 autoreload 266 /Users/bloomberg/awvl/blog/users/views.py changed, reloading.
+INFO 2024-04-22 01:49:18,908 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:51:16,654 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:51:19,037 basehttp 212 "GET /login/ HTTP/1.1" 200 2470
+WARNING 2024-04-22 01:51:19,064 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:51:19,070 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:51:19,075 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:51:26,678 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:51:26,694 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:51:30,224 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:51:30,252 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:52:31,555 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:52:37,772 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:52:37,803 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:53:41,609 autoreload 668 Watching for file changes with StatReloader
+ERROR 2024-04-22 01:53:46,467 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 83, in get
+    return render(request,'login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+ERROR 2024-04-22 01:53:46,469 basehttp 212 "GET /login/ HTTP/1.1" 500 134716
+ERROR 2024-04-22 01:53:46,884 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 83, in get
+    return render(request,'login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'user' is not a registered namespace
+ERROR 2024-04-22 01:53:46,886 basehttp 212 "GET /login/ HTTP/1.1" 500 134442
+INFO 2024-04-22 01:53:52,702 autoreload 668 Watching for file changes with StatReloader
+ERROR 2024-04-22 01:53:53,808 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/awvl/blog/users/views.py", line 83, in get
+    return render(request,'login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bloomberg/anaconda3/envs/awvl/lib/python3.11/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'forget_password' not found. 'forget_password' is not a valid view function or pattern name.
+ERROR 2024-04-22 01:53:53,810 basehttp 212 "GET /login/ HTTP/1.1" 500 133542
+INFO 2024-04-22 01:55:29,987 basehttp 212 "GET /login/ HTTP/1.1" 200 2484
+WARNING 2024-04-22 01:55:30,014 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:55:30,019 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:55:30,025 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:55:31,494 basehttp 212 "GET /forgetpassword/ HTTP/1.1" 200 3521
+INFO 2024-04-22 01:55:31,509 basehttp 212 "GET /static/js/forget_password1.js HTTP/1.1" 200 1803
+INFO 2024-04-22 01:56:09,772 basehttp 212 "GET /login/ HTTP/1.1" 200 2494
+WARNING 2024-04-22 01:56:09,791 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:56:09,796 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:56:09,801 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:56:11,090 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:56:11,100 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 304 0
+INFO 2024-04-22 01:56:11,100 basehttp 212 "GET /static/css/register.css HTTP/1.1" 304 0
+INFO 2024-04-22 01:56:15,408 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:56:17,334 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:56:19,130 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:56:47,502 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:56:50,406 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:57:21,291 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:57:23,015 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:57:23,041 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:57:23,046 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:57:23,051 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:57:23,802 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:57:23,825 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:57:23,831 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:57:23,836 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:57:25,465 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:57:29,791 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:57:32,084 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:57:32,112 basehttp 212 "GET / HTTP/1.1" 200 19146
+INFO 2024-04-22 01:57:53,404 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 01:57:54,605 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:58:20,131 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:58:22,398 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:58:22,427 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:58:24,612 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:58:52,006 basehttp 212 "GET /center/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:58:52,016 basehttp 212 "GET /login/?next=/center/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:58:52,049 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:58:52,054 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:58:52,058 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 01:59:01,342 basehttp 212 "POST /login/?next=/center/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:59:01,350 basehttp 212 "GET /center/ HTTP/1.1" 200 6270
+INFO 2024-04-22 01:59:01,365 basehttp 212 "GET /static/js/center2.js HTTP/1.1" 200 522
+WARNING 2024-04-22 01:59:01,365 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+WARNING 2024-04-22 01:59:01,374 basehttp 212 "GET /static/img/mei.png HTTP/1.1" 404 1792
+WARNING 2024-04-22 01:59:13,163 log 241 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-04-22 01:59:13,164 basehttp 212 "POST /login/?next=/center/ HTTP/1.1" 403 2517
+INFO 2024-04-22 01:59:14,712 basehttp 212 "GET /login/?next=/center/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:59:14,739 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+INFO 2024-04-22 01:59:16,697 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:59:18,975 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 01:59:20,169 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:59:22,583 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:59:22,615 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:59:33,444 basehttp 212 "GET / HTTP/1.1" 200 19138
+WARNING 2024-04-22 01:59:33,547 log 241 Not Found: /favicon.ico
+WARNING 2024-04-22 01:59:33,547 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-22 01:59:39,416 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:59:39,418 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 304 0
+WARNING 2024-04-22 01:59:39,524 log 241 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2024-04-22 01:59:39,524 basehttp 212 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 3665
+WARNING 2024-04-22 01:59:39,528 log 241 Not Found: /apple-touch-icon.png
+WARNING 2024-04-22 01:59:39,528 basehttp 212 "GET /apple-touch-icon.png HTTP/1.1" 404 3629
+INFO 2024-04-22 01:59:41,625 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+INFO 2024-04-22 01:59:41,639 basehttp 212 "GET /static/css/login.css HTTP/1.1" 200 1990
+INFO 2024-04-22 01:59:41,657 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 200 160313
+WARNING 2024-04-22 01:59:41,665 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:41,673 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:59:41,702 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:41,709 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:41,714 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 01:59:41,719 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 01:59:41,724 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:41,729 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-22 01:59:48,858 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:59:48,877 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:59:50,500 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 01:59:50,534 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 01:59:51,480 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:59:51,498 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:51,517 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:51,517 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 01:59:51,519 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:59:51,519 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 01:59:51,521 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:51,522 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:51,526 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-22 01:59:59,926 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 01:59:59,957 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 01:59:59,957 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 01:59:59,958 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:59,958 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:59,961 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 01:59:59,961 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 01:59:59,968 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 01:59:59,969 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+INFO 2024-04-22 02:00:05,754 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 02:00:05,783 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:00:05,788 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:00:05,791 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:00:05,794 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:00:05,794 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:00:05,796 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:00:05,796 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:00:05,797 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:00:16,686 log 241 Bad Request: /login/
+WARNING 2024-04-22 02:00:16,686 basehttp 212 "POST /login/ HTTP/1.1" 400 24
+INFO 2024-04-22 02:00:39,103 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:00:39,120 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 02:01:51,958 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:01:51,993 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 02:01:55,095 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:01:55,125 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 02:01:58,864 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:01:58,892 basehttp 212 "GET / HTTP/1.1" 200 19138
+INFO 2024-04-22 02:02:35,877 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 02:02:37,165 basehttp 212 "GET / HTTP/1.1" 200 19139
+INFO 2024-04-22 02:02:37,903 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 02:02:37,934 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:37,936 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:02:37,939 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:37,939 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:02:37,939 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:37,939 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:02:37,943 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:37,945 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-22 02:02:40,097 basehttp 212 "GET /register/ HTTP/1.1" 200 8139
+INFO 2024-04-22 02:02:40,121 basehttp 212 "GET /static/css/register.css HTTP/1.1" 200 2613
+INFO 2024-04-22 02:02:40,121 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 200 1674
+INFO 2024-04-22 02:02:46,638 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 02:02:46,653 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:02:46,658 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:46,663 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:46,664 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:46,665 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:02:46,668 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:02:46,670 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:46,671 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:46,672 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:46,677 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:02:46,689 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:46,694 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:02:46,699 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:02:46,703 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:02:46,708 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:02:46,713 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-22 02:02:50,262 basehttp 212 "GET / HTTP/1.1" 200 19139
+INFO 2024-04-22 02:04:10,833 basehttp 212 "GET / HTTP/1.1" 200 19139
+INFO 2024-04-22 02:04:10,859 basehttp 212 "GET /static/md_css/monokai.css HTTP/1.1" 200 4118
+INFO 2024-04-22 02:04:10,860 basehttp 212 "GET /static/common/common.css HTTP/1.1" 200 381
+INFO 2024-04-22 02:04:10,862 basehttp 212 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2024-04-22 02:04:10,862 basehttp 212 "GET /static/common/jquery.pagination.css HTTP/1.1" 200 523
+INFO 2024-04-22 02:04:10,865 basehttp 212 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 200 12941
+INFO 2024-04-22 02:04:10,866 basehttp 212 "GET /static/js/vue-2.5.16.js HTTP/1.1" 200 289307
+INFO 2024-04-22 02:04:10,869 basehttp 212 "GET /static/js/host.js HTTP/1.1" 200 35
+INFO 2024-04-22 02:04:10,871 basehttp 212 "GET /media/article/20240420/Snipaste_2024-04-20_17-09-42.jpg HTTP/1.1" 200 13383
+INFO 2024-04-22 02:04:10,872 basehttp 212 "GET /static/js/common.js HTTP/1.1" 200 891
+INFO 2024-04-22 02:04:10,873 basehttp 212 "GET /static/js/index1.js HTTP/1.1" 200 529
+INFO 2024-04-22 02:04:10,874 basehttp 212 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 200 2935
+INFO 2024-04-22 02:04:10,874 basehttp 212 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97163
+WARNING 2024-04-22 02:04:11,477 log 241 Not Found: /favicon.ico
+WARNING 2024-04-22 02:04:11,477 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-22 02:04:12,148 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+INFO 2024-04-22 02:04:12,159 basehttp 212 "GET /static/js/login1.js HTTP/1.1" 200 677
+INFO 2024-04-22 02:04:12,159 basehttp 212 "GET /static/css/login.css HTTP/1.1" 200 1990
+INFO 2024-04-22 02:04:12,160 basehttp 212 "GET /static/css/all.min.css HTTP/1.1" 200 59305
+INFO 2024-04-22 02:04:12,160 basehttp 212 "GET /static/img/logo.png HTTP/1.1" 200 23380
+INFO 2024-04-22 02:04:12,176 basehttp 212 "GET /static/css/111.jpg HTTP/1.1" 200 160313
+WARNING 2024-04-22 02:04:12,212 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:04:12,217 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:04:12,221 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 02:04:17,372 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:04:17,384 basehttp 212 "GET / HTTP/1.1" 200 19139
+INFO 2024-04-22 02:04:18,716 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:04:18,738 basehttp 212 "GET / HTTP/1.1" 200 19139
+INFO 2024-04-22 02:04:59,533 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 02:06:17,622 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 02:06:20,451 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 02:06:20,483 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:06:20,488 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:06:20,493 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+INFO 2024-04-22 02:06:26,127 basehttp 212 "POST /login/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:06:26,147 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:06:27,913 basehttp 212 "GET /center/ HTTP/1.1" 200 6274
+INFO 2024-04-22 02:06:27,928 basehttp 212 "GET /static/js/center2.js HTTP/1.1" 200 522
+INFO 2024-04-22 02:07:37,906 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:07:39,014 basehttp 212 "GET /login/ HTTP/1.1" 200 2500
+WARNING 2024-04-22 02:07:39,027 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:07:39,038 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:07:39,038 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:07:39,041 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:07:39,043 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:07:39,047 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:07:39,050 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:07:39,054 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:07:39,057 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:07:39,065 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:07:39,076 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:07:39,091 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:07:39,097 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:07:39,102 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:07:39,108 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:07:39,113 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+INFO 2024-04-22 02:11:51,965 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 02:11:56,976 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:11:59,537 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:12:01,441 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:12:01,470 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:12:03,183 basehttp 212 "GET /login/ HTTP/1.1" 200 2512
+WARNING 2024-04-22 02:12:03,221 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:12:03,221 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:12:03,221 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:12:03,221 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:12:03,221 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:12:03,222 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:12:03,233 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:12:03,233 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+INFO 2024-04-22 02:12:03,234 basehttp 212 "GET /static/css/fontawesome/all.min.css HTTP/1.1" 200 59305
+WARNING 2024-04-22 02:12:03,248 basehttp 212 "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1852
+WARNING 2024-04-22 02:12:03,255 basehttp 212 "GET /static/css/webfonts/fa-solid-900.woff HTTP/1.1" 404 1849
+WARNING 2024-04-22 02:12:03,269 basehttp 212 "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:12:03,274 basehttp 212 "GET /static/css/webfonts/fa-solid-900.svg HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:12:03,279 basehttp 212 "GET /static/css/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1858
+WARNING 2024-04-22 02:12:03,284 basehttp 212 "GET /static/css/webfonts/fa-regular-400.woff HTTP/1.1" 404 1855
+WARNING 2024-04-22 02:12:03,289 basehttp 212 "GET /static/css/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1852
+WARNING 2024-04-22 02:12:03,295 basehttp 212 "GET /static/css/webfonts/fa-regular-400.svg HTTP/1.1" 404 1852
+INFO 2024-04-22 02:13:15,237 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-22 02:13:49,802 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:13:52,360 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:13:53,654 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:13:55,223 basehttp 212 "GET /logout/ HTTP/1.1" 302 0
+INFO 2024-04-22 02:13:55,250 basehttp 212 "GET / HTTP/1.1" 200 19133
+INFO 2024-04-22 02:13:56,561 basehttp 212 "GET /login/ HTTP/1.1" 200 2516
+WARNING 2024-04-22 02:13:56,597 basehttp 212 "GET /static/webfonts/fa-regular-400.woff HTTP/1.1" 404 1843
+WARNING 2024-04-22 02:13:56,599 basehttp 212 "GET /static/webfonts/fa-solid-900.woff HTTP/1.1" 404 1837
+WARNING 2024-04-22 02:13:56,601 basehttp 212 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 404 1846
+WARNING 2024-04-22 02:13:56,601 basehttp 212 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:13:56,601 basehttp 212 "GET /static/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:13:56,605 basehttp 212 "GET /static/webfonts/fa-solid-900.svg HTTP/1.1" 404 1834
+WARNING 2024-04-22 02:13:56,612 basehttp 212 "GET /static/webfonts/fa-regular-400.svg HTTP/1.1" 404 1840
+WARNING 2024-04-22 02:13:56,612 basehttp 212 "GET /static/webfonts/fa-regular-400.ttf HTTP/1.1" 404 1840
+INFO 2024-04-22 02:13:56,613 basehttp 212 "GET /static/css/fontawesome/css/all.min.css HTTP/1.1" 200 59305
+INFO 2024-04-22 02:13:56,626 basehttp 212 "GET /static/css/fontawesome/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 78268
+INFO 2024-04-22 02:13:56,632 basehttp 212 "GET /static/css/fontawesome/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13224

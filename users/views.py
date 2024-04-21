@@ -1,15 +1,12 @@
-from django.shortcuts import render
-
 # Create your views here.
-
+from django.shortcuts import render
 from django.views import View
-
 from django.http.response import HttpResponseBadRequest
-import re
 from users.models import User
 from django.db import DatabaseError
 from django.shortcuts import  redirect
 from django.urls import reverse
+import re
 
 #注册视图
 class RegisterView(View):
@@ -18,45 +15,40 @@ class RegisterView(View):
         return render(request,'register.html')
 
     def post(self,request):
-        """
-        1.接收数据
-        2.验证数据
-            2.1 参数是否齐全
-            2.2 手机号（改成用户名之类的吧）是否符合格式
-            2.3 密码是否符合格式
-            2.4 密码和确认密码要一致
 
-        3.保存注册信息
-        4.返回响应跳转到指定页面
-        :param request:
-        :return:
-        """
         # 1.接收数据
-        mobile=request.POST.get('mobile')
-        password=request.POST.get('password')
-        password2=request.POST.get('password2')
+        username = request.POST.get('username')
+        email_address = request.POST.get('email_address')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+        full_name = request.POST.get('full_name')
+        OS_type = request.POST.get('OS_type')
+        IP_address = request.POST.get('IP_address')
+        Team = request.POST.get('Team')
+        Role = request.POST.get('Role')
+        Team_name = request.POST.get('Team_name')
 
         # 2.验证数据
         #     2.1 参数是否齐全
-        if not all([mobile,password,password2]):
+        if not all([email_address,password,password2]):
             return HttpResponseBadRequest('缺少必要的参数')
-
         #     2.4 密码和确认密码要一致
         if password != password2:
             return HttpResponseBadRequest('两次密码不一致')
-
-
-
-
-
-
-
         # 3.保存注册信息
         # create_user 可以使用系统的方法来对密码进行加密
         try:
-            user=User.objects.create_user(username=mobile,
-                                      mobile=mobile,
-                                      password=password)
+            user=User.objects.create_user(username=username,
+                                      email=email_address,
+                                      email_address=email_address,
+                                      password=password,
+                                      full_name=full_name,
+                                      OS_type=OS_type,
+                                      IP_address=IP_address,
+                                      Team=Team,
+                                      Role=Role,
+                                      Team_name=Team_name,
+                                          )
         except DatabaseError as e:
             logger.error(e)
             return HttpResponseBadRequest('注册失败')
@@ -80,7 +72,6 @@ class RegisterView(View):
 
 
 from django.http.response import JsonResponse
-from utils.response_code import RETCODE
 import logging
 logger=logging.getLogger('django')
 
@@ -91,27 +82,12 @@ class LoginView(View):
 
         return render(request,'login.html')
     def post(self,request):
-        """
-        1.接收参数
-        2.参数的验证
-            2.1 验证手机号是否符合规则
-            2.2 验证密码是否符合规则
-        3.用户认证登录
-        4.状态的保持
-        5.根据用户选择的是否记住登录状态来进行判断
-        6.为了首页显示我们需要设置一些cookie信息
-        7.返回响应
-        :param request:
-        :return:
-        """
+
         # 1.接收参数
-        mobile=request.POST.get('mobile')
+        username=request.POST.get('username')
         password=request.POST.get('password')
         remember=request.POST.get('remember')
         # 2.参数的验证
-        #     2.1 验证手机号是否符合规则
-        if not re.match(r'^1[3-9]\d{9}$',mobile):
-            return HttpResponseBadRequest('手机号不符合规则')
         #     2.2 验证密码是否符合规则
         if not re.match(r'^[a-zA-Z0-9]{8,20}$',password):
             return HttpResponseBadRequest('密码不符合规则')
@@ -121,9 +97,8 @@ class LoginView(View):
         # 如果我们的用户名或密码不正确，会返回None
         from django.contrib.auth import authenticate
         # 默认的认证方法是 针对于 username 字段进行用户名的判断
-        # 当前的判断信息是 手机号，所以我们需要修改一下认证字段
         # 我们需要到User模型中进行修改，等测试出现问题的时候，我们再修改
-        user=authenticate(mobile=mobile,password=password)
+        user=authenticate(username=username,password=password)
 
         if user is None:
             return HttpResponseBadRequest('用户名或密码错误')
@@ -176,27 +151,39 @@ class ForgetPasswordView(View):
 
     def post(self, request):
 
-        mobile = request.POST.get('mobile')
+        email_address = request.POST.get('email_address')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
+        full_name = request.POST.get('full_name')
+        OS_type = request.POST.get('OS_type')
+        IP_address = request.POST.get('IP_address')
+        Team = request.POST.get('Team')
+        Role = request.POST.get('Role')
+        Team_name = request.POST.get('Team_name')
 
-        if not all([mobile, password, password2]):
+        if not all([email_address, password, password2]):
             return HttpResponseBadRequest('参数不全')
-        if not re.match(r'^1[3-9]\d{9}$',mobile):
-            return HttpResponseBadRequest('手机号不符合格则')
         if not re.match(r'^[0-9A-Za-z]{8,20}$', password):
             return HttpResponseBadRequest('密码不符合格则')
         if password2 != password:
             return HttpResponseBadRequest('密码不一致')
             # 3.根据手机号进行用户信息的查询
         try:
-            user = User.objects.get(mobile=mobile)
+            user = User.objects.get(email_address=email_address)
         except User.DoesNotExist:
             # 5.如果手机号没有查询出用户信息，则进行新用户的创建
             try:
-                User.objects.create_user(username=mobile,
-                                         mobile=mobile,
-                                         password=password)
+                User.objects.create_user(username=email_address,
+                                                email_address=email_address,
+                                                email=email_address,
+                                                password=password,
+                                                full_name=full_name,
+                                                OS_type=OS_type,
+                                                IP_address=IP_address,
+                                                Team=Team,
+                                                Role=Role,
+                                                Team_name=Team_name,
+                                                )
             except Exception:
                 return HttpResponseBadRequest('修改失败，请稍后再试')
         else:
@@ -221,34 +208,45 @@ class UserCenterView(LoginRequiredMixin,View):
         #组织获取用户的信息
         context = {
             'username':user.username,
-            'mobile':user.mobile,
+            'email_address':user.email_address,
             'avatar':user.avatar.url if user.avatar else None,
-            'user_desc':user.user_desc
+            'user_desc':user.user_desc,
+            'full_name':user.full_name,
+            'OS_type':user.OS_type,
+            'IP_address':user.IP_address,
+            'Team': user.Team,
+            'Role': user.Role,
+            'Team_name': user.Team_name,
         }
         return render(request,'center.html',context=context)
 
 
     def post(self,request):
-        """
-        1.接收参数
-        2.将参数保存起来
-        3.更新cookie中的username信息
-        4.刷新当前页面（重定向操作）
-        5.返回响应
-        :param request:
-        :return:
-        """
+
         user=request.user
         # 1.接收参数
-        username=request.POST.get('username',user.username)
-        user_desc=request.POST.get('desc',user.user_desc)
-        avatar=request.FILES.get('avatar')
+        username = request.POST.get('username',user.username)
+        user_desc = request.POST.get('desc',user.user_desc)
+        avatar = request.FILES.get('avatar')
+        full_name = request.POST.get('full_name')
+        OS_type = request.POST.get('OS_type')
+        IP_address = request.POST.get('IP_address')
+        Team = request.POST.get('Team')
+        Role = request.POST.get('Role')
+        Team_name = request.POST.get('Team_name')
         # 2.将参数保存起来
         try:
             user.username=username
             user.user_desc=user_desc
             if avatar:
                 user.avatar=avatar
+            user.full_name = full_name
+            user.OS_type = OS_type
+            user.IP_address = IP_address
+            user.Team = Team
+            user.Role = Role
+            user.Team_name = Team_name
+
             user.save()
         except Exception as e:
             logger.error(e)
@@ -275,14 +273,7 @@ class WriteBlogView(LoginRequiredMixin,View):
         }
         return render(request, 'write_blog.html', context=context)
     def post(self,request):
-        """
-        # 1.接收数据
-        # 2.验证数据
-        # 3.数据入库
-        # 4.跳转到指定页面（暂时首页）
-        :param request:
-        :return:
-        """
+
         # 1.接收数据
         avatar=request.FILES.get('avatar')
         title=request.POST.get('title')
