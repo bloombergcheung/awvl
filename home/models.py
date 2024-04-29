@@ -3,9 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 class ArticleCategory(models.Model):
-    """
-    文章分类
-    """
+
     #分类标题
     title=models.CharField(max_length=100,blank=True)
     #分类的创建时间
@@ -58,12 +56,7 @@ class Article(models.Model):
         return self.title
 
 class Comment(models.Model):
-    """
-    评论内容
-    评论的文章
-    评论的用户
-    评论的时间
-    """
+
     # 评论内容
     content=models.TextField()
     # 评论的文章

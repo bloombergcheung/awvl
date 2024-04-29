@@ -4,11 +4,12 @@ from django.views import View
 from django.http.response import HttpResponseBadRequest
 from users.models import User
 from django.db import DatabaseError
-from django.shortcuts import  redirect
+from django.shortcuts import redirect
 from django.urls import reverse
 import re
 
-#注册视图
+
+
 class RegisterView(View):
     def get(self,request):
 
@@ -29,12 +30,10 @@ class RegisterView(View):
         Team_name = request.POST.get('Team_name')
 
         # 2.验证数据
-        #     2.1 参数是否齐全
         if not all([email_address,password,password2]):
-            return HttpResponseBadRequest('缺少必要的参数')
-        #     2.4 密码和确认密码要一致
+            return HttpResponseBadRequest('Necessary parameters are missing')
         if password != password2:
-            return HttpResponseBadRequest('两次密码不一致')
+            return HttpResponseBadRequest('Two passwords do not match')
         # 3.保存注册信息
         # create_user 可以使用系统的方法来对密码进行加密
         try:
@@ -51,14 +50,12 @@ class RegisterView(View):
                                           )
         except DatabaseError as e:
             logger.error(e)
-            return HttpResponseBadRequest('注册失败')
+            return HttpResponseBadRequest('Registration failure')
 
         from django.contrib.auth import login
         login(request,user)
         # 4.返回响应跳转到指定页面
-        # 暂时返回一个注册成功的信息，后期再实现跳转到指定页面
 
-        # redirect 是进行重定向
         # reverse 是可以通过 namespace:name 来获取到视图所对应的路由
         response = redirect(reverse('home:index'))
         # return HttpResponse('注册成功，重定向到首页')
@@ -90,7 +87,7 @@ class LoginView(View):
         # 2.参数的验证
         #     2.2 验证密码是否符合规则
         if not re.match(r'^[a-zA-Z0-9]{8,20}$',password):
-            return HttpResponseBadRequest('密码不符合规则')
+            return HttpResponseBadRequest('The password does not comply with the rules')
         # 3.用户认证登录
         # 采用系统自带的认证方法进行认证
         # 如果我们的用户名和密码正确，会返回user
@@ -101,7 +98,7 @@ class LoginView(View):
         user=authenticate(username=username,password=password)
 
         if user is None:
-            return HttpResponseBadRequest('用户名或密码错误')
+            return HttpResponseBadRequest('The username or password is incorrect')
         # 4.状态的保持
         from django.contrib.auth import login
         login(request,user)
@@ -151,49 +148,29 @@ class ForgetPasswordView(View):
 
     def post(self, request):
 
-        email_address = request.POST.get('email_address')
+        username = request.POST.get('username')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
-        full_name = request.POST.get('full_name')
-        OS_type = request.POST.get('OS_type')
-        IP_address = request.POST.get('IP_address')
-        Team = request.POST.get('Team')
-        Role = request.POST.get('Role')
-        Team_name = request.POST.get('Team_name')
 
-        if not all([email_address, password, password2]):
-            return HttpResponseBadRequest('参数不全')
+        if not all([username, password, password2]):
+            return HttpResponseBadRequest('Parameter insufficiency')
         if not re.match(r'^[0-9A-Za-z]{8,20}$', password):
-            return HttpResponseBadRequest('密码不符合格则')
+            return HttpResponseBadRequest('The password does not comply with the rules')
         if password2 != password:
-            return HttpResponseBadRequest('密码不一致')
-            # 3.根据手机号进行用户信息的查询
+            return HttpResponseBadRequest('Password inconsistency')
+            # 3.进行用户信息的查询
         try:
-            user = User.objects.get(email_address=email_address)
+            user = User.objects.get(username=username)
         except User.DoesNotExist:
-            # 5.如果手机号没有查询出用户信息，则进行新用户的创建
-            try:
-                User.objects.create_user(username=email_address,
-                                                email_address=email_address,
-                                                email=email_address,
-                                                password=password,
-                                                full_name=full_name,
-                                                OS_type=OS_type,
-                                                IP_address=IP_address,
-                                                Team=Team,
-                                                Role=Role,
-                                                Team_name=Team_name,
-                                                )
-            except Exception:
-                return HttpResponseBadRequest('修改失败，请稍后再试')
+            # 5.如果没有查询出用户信息，则
+                return HttpResponseBadRequest('The modification failed. Please try again later')
         else:
-            # 4.如果手机号查询出用户信息则进行用户密码的修改
+            # 4.如果查询出用户信息则进行用户密码的修改
             user.set_password(password)
             # 注意，保存用户信息
             user.save()
             # 6.进行页面跳转，跳转到登录页面
         response = redirect(reverse('users:login'))
-            # 7.返回响应
         return response
 
 
@@ -229,6 +206,7 @@ class UserCenterView(LoginRequiredMixin,View):
         user_desc = request.POST.get('desc',user.user_desc)
         avatar = request.FILES.get('avatar')
         full_name = request.POST.get('full_name')
+        email_address = request.POST.get('email_address')
         OS_type = request.POST.get('OS_type')
         IP_address = request.POST.get('IP_address')
         Team = request.POST.get('Team')
@@ -241,6 +219,7 @@ class UserCenterView(LoginRequiredMixin,View):
             if avatar:
                 user.avatar=avatar
             user.full_name = full_name
+            user.email_address = email_address
             user.OS_type = OS_type
             user.IP_address = IP_address
             user.Team = Team
@@ -250,7 +229,7 @@ class UserCenterView(LoginRequiredMixin,View):
             user.save()
         except Exception as e:
             logger.error(e)
-            return HttpResponseBadRequest('修改失败，请稍后再试')
+            return HttpResponseBadRequest('Publishing failed, please try again later')
         # 3.更新cookie中的username信息
         # 4.刷新当前页面（重定向操作）
         response=redirect(reverse('users:center'))
@@ -286,12 +265,12 @@ class WriteBlogView(LoginRequiredMixin,View):
         # 2.验证数据
         # 2.1 验证参数是否齐全
         if not all([avatar,title,category_id,sumary,content]):
-            return HttpResponseBadRequest('参数不全')
+            return HttpResponseBadRequest('Parameter insufficiency')
         # 2.2 判断分类id
         try:
             category=ArticleCategory.objects.get(id=category_id)
         except ArticleCategory.DoesNotExist:
-            return HttpResponseBadRequest('没有此分类')
+            return HttpResponseBadRequest('No such category')
         # 3.数据入库
         try:
             article=Article.objects.create(
@@ -305,6 +284,6 @@ class WriteBlogView(LoginRequiredMixin,View):
             )
         except Exception as e:
             logger.error(e)
-            return HttpResponseBadRequest('发布失败，请稍后再试')
+            return HttpResponseBadRequest('Publishing failed, please try again later')
         # 4.跳转到指定页面（暂时首页）
         return redirect(reverse('home:index'))

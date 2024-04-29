@@ -5,29 +5,18 @@ var vm = new Vue({
     data: {
         host,
         show_menu:false,
-        mobile:'',
-        mobile_error:false,
-        mobile_error_message:'手机号错误',
         password:'',
         password_error:false,
-        password_error_message:'密码错误',
+        password_error_message:'The password does not comply with the rules',
         password2:'',
         password2_error:false,
-        password2_error_message:'密码不一致',
+        password2_error_message:'Two passwords do not match',
 
     },
     mounted(){
     },
     methods: {
-        //检查手机号
-        check_mobile: function(){
-            var re = /^1[3-9]\d{9}$/;
-            if (re.test(this.mobile)) {
-                this.mobile_error = false;
-            } else {
-                this.mobile_error = true;
-            }
-        },
+
         //检查密码
         check_password:function () {
             var re = /^[0-9A-Za-z]{8,20}$/;
@@ -49,11 +38,10 @@ var vm = new Vue({
 
         //提交
         on_submit:function () {
-            this.check_mobile();
             this.check_password();
             this.check_password2();
 
-            if (this.mobile_error == true || this.password_error == true || this.password2_error == true) {
+            if (this.password_error == true || this.password2_error == true) {
                 // 不满足注册条件：禁用表单
                 window.event.returnValue = false;
             }

@@ -12,7 +12,11 @@
     <script type="text/javascript" src="{% static 'js/axios-0.18.0.min.js' %}"></script>
 </head>
 
-
+<style>
+  .customCursor {
+    cursor: pointer;
+  }
+</style>
 <body>
 
 <div id="app">
@@ -29,9 +33,6 @@
 </div>
 
 
-
-
-<!--content-->
 <div class="container">
     <div class="container-header">
         <h1>Welcome</h1>
@@ -51,7 +52,7 @@
             <input type="checkbox" name="remember" id="terms" name="remember" required checked class="custom-control-input" v-model="remembered">
             <label for="terms">I agree to the terms and conditions</label>
             </div>
-            <button type="submit" id="submit_login" @click="on_submit"> Login </button>
+            <button type="submit" id="submit_login" class="customCursor" @click="on_submit"> Login </button>
             <div class="link-group">
             <a href="{% url 'users:forgetpassword' %}" class="link_pwd_reg">Forgot Password?</a>
             <a class="link_pwd_reg" > | </a>

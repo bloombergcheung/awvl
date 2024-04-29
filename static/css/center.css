@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --primary-color: #195AA1;
+  --text-dark: #1e293b;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('111.jpg'); /* 替换为您的图片URL */
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*overflow:hidden;*/
+}
+
+.header {
+    /*position: fixed;*/
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0); /* 透明背景 */
+}
+.navbar{
+    position: fixed;
+    top: 0; /* 距离顶部0像素 */
+    right: 0; /* 距离右边0像素 */
+}
+.logo {
+    position: fixed;
+    top: 10px; /* 距离顶部0像素 */
+    left: 10px; /* 距离右边0像素 */
+    height: 50px;
+}
+#dropdown-list{
+    background-color: rgba(255,255,255,0);
+    height: 65px;
+    width: 200px;
+    line-height: 65px;
+    transition: .3s;
+    cursor: pointer;
+    padding-right: 10px;
+    list-style: none;
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+    text-align: right;
+}
+#dropdown-list:hover{
+    color: #bebfc2;
+    cursor: pointer;
+}
+#dropdown-list li:hover{
+    color:rgb(36,125,215);
+    cursor: pointer;
+}
+
+#dropdown-list li:hover svg{
+    color:rgb(36,125,215);
+    fill: rgb(36,125,215);
+}
+
+#dropdown-list ul{
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    transform: translateY(-20px);
+    padding: 0 10px 0 0;
+}
+#dropdown-list ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    color: #000000;
+    height: 0;
+    width: 200px;
+    transition: .2s;
+    opacity: 0;
+    padding-right: 10px;
+}
+#dropdown-list:hover li{
+    height: 65px;
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+#dropdown-item{
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+svg{
+    width:  30px;
+    height: 30px;
+    fill: #000000;
+}
+
+.left-box{
+    width: 150px;
+}
+
+.right-box{
+    display: flex;
+    width: 35px;
+    align-items: center; /* 垂直居中 */
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+#row{
+    width: 1140px;
+    border-radius: 25px;
+    background-color: rgba(36,125,215,0.7);
+    box-shadow: 0 0 17px #3dd5f3;
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 150px;
+}
+
+
+
+.no-box .card {
+  width: 350px;
+  height: 500px;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  background-color: var(--primary-color);
+}
+
+.add-box .card {
+  width: 350px;
+  height: 500px;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top-left-radius:10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 0 0;
+  background-color: var(--primary-color);
+}
+
+.container-card{
+  height: 500px;
+  width: 350px;
+  transition: width 1s ease;
+  will-change: width;
+  display: flex;
+}
+
+
+.container-card.left{
+  border-radius: 10px;
+  /*background-color: red;*/
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  width: 1000px;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card img {
+  max-width: 100px;
+  border-radius: 100%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0;
+}
+
+.show-username {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.show-email {
+  font-size: 0.9rem;
+  margin-top: 2px;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.show-about {
+  max-width: 250px;
+  margin: auto;
+  font-size: 0.9rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.header span i{
+  color: var(--white);
+}
+.svg_button{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.icon-svg{
+  width: 100%;
+  height: 100%;
+}
+
+.add-box{
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new_box{
+  width: 650px;
+  height: 500px;
+  padding: 2rem 1rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ffffff;
+}
+
+#svg_right_button{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.form-container{
+  margin-top:13px;
+  width: 580px;
+  height: 380px;
+  /*background-color: yellow;*/
+  padding-left: 60px;
+  overflow: hidden;
+}
+
+#username{
+  font-family: "Poppins", sans-serif;
+  height: 43px;
+  width: 260px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--white);
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
+#email_address{
+  font-family: "Poppins", sans-serif;
+  width: 260px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
+
+#desc {
+  font-family: "Poppins", sans-serif;
+  height: 200px;
+  width: 260px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  resize: none;
+}
+
+.upload-file-button{
+  margin: 1rem;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.upload-file-button.pro{
+  cursor: pointer;
+}
+
+.form-group.col-md-4 input,button,label,select{
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-group.col-md-4{
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.form-group.col-md-4 input,select{
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 200px;
+}
+
+.form-group-left{
+  width: 200px;
+}
+
+.btn.btn-primary,.btn.sub{
+  margin-top: 20px;
+  width: 80px;
+  height: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.btn.sub{
+  background-color: #195AA1;
+  color: white;
+}
+
+.btn.sub:hover{
+  background-color: #081760;
+}

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!-- 网站主语言 -->
 <html lang="en">
 
 <head>
-    <!-- 网站采用的字符编码 -->
     <meta charset="utf-8">
-    <!-- 网站标题 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>detail</title>
     {% load static %}
     <!-- 引入bootstrap的css文件 -->
@@ -29,7 +27,7 @@
     <div class="container">
         <!-- 导航栏商标 -->
         <div>
-            <a class="navbar-brand" href="{% url 'home:index' %}">个人博客</a>
+            <a class="navbar-brand" href="{% url 'home:index' %}">awvl</a>
         </div>
         <!-- 分类 -->
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -55,18 +53,14 @@
         <ul class="nav navbar-nav">
 
             <!-- 如果用户已经登录，则显示用户名下拉框 -->
-            <li class="nav-item dropdown" v-if="is_login">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="show_menu_click">[[username]]</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: block" v-show="show_menu">
-                    <a class="dropdown-item" href="{% url 'users:writeblog' %}">写文章</a>
-                    <a class="dropdown-item" href='{% url 'users:center' %}'>个人信息</a>
-                    <a class="dropdown-item" href='{% url 'users:logout' %}'>退出登录</a>
+                    <a class="dropdown-item" href="{% url 'users:writeblog' %}">writeblog</a>
+                    <a class="dropdown-item" href='{% url 'users:center' %}'>center</a>
+                    <a class="dropdown-item" href='{% url 'users:logout' %}'>logout</a>
                 </div>
             </li>
-            <li class="nav-item" v-else>
-                <a class="nav-link" href="{% url 'users:login' %}">登录</a>
-            </li>
-
         </ul>
     </div>
 </nav>
@@ -78,7 +72,7 @@
         <div class="col-9">
             <!-- 标题及作者 -->
             <h1 class="mt-4 mb-4">{{ article.title }}</h1>
-            <div class="alert alert-success"><div>作者：<span>{{ article.author.username }}</span></div><div>浏览：{{ article.total_views }}</div></div>
+            <div class="alert alert-success"><div>author：<span>{{ article.author.username }}</span></div><div>view：{{ article.total_views }}</div></div>
             <!-- 文章正文 -->
             <div class="col-12" style="word-break: break-all;word-wrap: break-word;">
                 <p><p>{{ article.content|safe }}</p></p>
@@ -87,14 +81,14 @@
             <!-- 发表评论 -->
             <hr>
             <br>
-            <h5 class="row justify-content-center" v-show="!is_login">请<a href="login.html">登录</a>后回复
+            <h5 class="row justify-content-center" v-show="!is_login">please<a href="login.html">login</a>and reply
             </h5>
             <br>
             <div>
                 <form method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{ article.id }}">
-                <div class="form-group"><label for="body"><strong>我也要发言：</strong></label>
+                <div class="form-group"><label for="body"><strong>I have to speak：</strong></label>
                     <div>
 
                         <div class="django-ckeditor-widget" data-field-id="id_body" style="display: inline-block;">
@@ -105,12 +99,12 @@
                     </div>
                 </div>
                     <!-- 提交按钮 -->
-                    <button type="submit" class="btn btn-primary ">发送</button>
+                    <button type="submit" class="btn btn-primary ">send</button>
                 </form>
             </div>
             <br>
             <!-- 显示评论 -->
-            <h4>共有{{ total_count }}条评论</h4>
+            <h4>There was {{ total_count }} comment in total</h4>
             <div class="row">
                 {% for comment in comments %}
                 <div class="col-12" >
@@ -131,7 +125,7 @@
         <!-- 推荐 -->
         <div class="col-3 mt-4" id="sidebar" class="sidebar">
             <div class="sidebar__inner">
-                    <h4><strong>推荐</strong></h4>
+                    <h4><strong>Recommended article</strong></h4>
                     <hr>
                     {% for hot_article in hot_articles %}
                         <a href="{% url 'home:detail' %}?id={{ hot_article.id }}" style="color: black">{{ hot_article.title }}</a><br>

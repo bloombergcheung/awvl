@@ -1,139 +1,263 @@
 <!DOCTYPE html>
-<!-- 网站主语言 -->
 <html lang="en">
 
 <head>
-    <!-- 网站采用的字符编码 -->
     <meta charset="utf-8">
-    <!-- 网站标题 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> center </title>
     {% load static %}
-    <!-- 引入bootstrap的css文件 -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <!-- 引入vuejs -->
-    <script type="text/javascript" src="{% static 'js/vue-2.5.16.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/center.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/vue.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/axios-0.18.0.min.js' %}"></script>
 </head>
 
 <body>
 <div id="app">
 
-<!-- 定义导航栏 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <!-- 导航栏商标 -->
-        <div>
-            <a class="navbar-brand" href="{% url 'home:index' %}">个人博客</a>
-        </div>
-    </div>
-    <!--登录/个人中心-->
-    <div class="navbar-collapse">
-        <ul class="nav navbar-nav">
-            <!-- 如果用户已经登录，则显示用户名下拉框 -->
-            <li class="nav-item dropdown" v-if="is_login">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="show_menu_click">[[username]]</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: block" v-show="show_menu">
-                    <a class="dropdown-item" href="write_blog.html">写文章</a>
-                    <a class="dropdown-item" href='{% url 'users:center' %}'>个人信息</a>
-                    <a class="dropdown-item" href='{% url 'users:logout' %}'>退出登录</a>
-                </div>
-            </li>
-            <!-- 如果用户未登录，则显示登录按钮 -->
-            <li class="nav-item" v-else>
-                <a class="nav-link" href="{% url 'users:login' %}">登录</a>
-            </li>
 
-        </ul>
+<div class="header">
+    <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+    <div class="navbar">
+        <li class="button" id = "dropdown-list">
+        <div>[[username]]</div>
+            <ul>
+                <li  onclick="goToLink(writeBlogUrl)">
+                    <div class="left-box" >
+                        write blog
+                    </div>
+                    <div class = "right-box" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path d="M938.666667 308.906667a42.666667 42.666667 0 0 0-12.373334-30.293334l-180.906666-180.906666a42.666667 42.666667 0 0 0-30.293334-12.373334 42.666667 42.666667 0 0 0-30.293333 12.373334l-120.746667 120.746666L97.706667 684.8a42.666667 42.666667 0 0 0-12.373334 30.293333V896a42.666667 42.666667 0 0 0 42.666667 42.666667h180.906667a42.666667 42.666667 0 0 0 32.426666-12.373334l463.786667-466.346666L926.293333 341.333333a50.773333 50.773333 0 0 0 9.386667-14.08 42.666667 42.666667 0 0 0 0-10.24 29.866667 29.866667 0 0 0 0-5.973333zM291.413333 853.333333H170.666667v-120.746666l423.68-423.68 120.746666 120.746666zM775.253333 369.493333l-120.746666-120.746666 60.586666-60.16 120.32 120.32z" p-id="4295" ></path>
+                        </svg>
+                    </div>
+                </li>
+                <li  onclick="goToLink(centerUrl)">
+                    <div class="left-box" >
+                        user center
+                    </div>
+                    <div class = "right-box" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path d="M917.966 917.332c0 22.47-17.892 40.7-39.914 40.7-22.058 0-39.913-18.23-39.913-40.7l-0.075-0.49h-1.088C818.03 759.175 688.798 636.544 530.154 631.366c-3.413 0.151-6.752 0.562-10.24 0.562-3.45 0-6.79-0.41-10.203-0.525-158.606 5.14-287.84 127.807-306.784 285.437h-1.014l0.076 0.49c0 22.47-17.855 40.7-39.913 40.7s-39.915-18.23-39.915-40.7l-0.374-3.789c0-6.751 2.026-12.904 4.915-18.53 21.082-140.714 111.076-258.242 235.432-312.786C288.42 530.832 239.99 444.515 239.99 346.604c0-157.591 125.334-285.361 279.925-285.361 154.628 0 279.96 127.77 279.96 285.361 0 97.873-48.391 184.153-122.104 235.546 124.843 54.732 215.1 172.863 235.809 314.211 2.437 5.29 4.014 10.992 4.014 17.181l0.373 3.79zM719.823 346.68c0-112.577-89.545-203.81-199.984-203.81-110.402 0-199.945 91.234-199.945 203.81s89.543 203.809 199.945 203.809c110.44 0 199.984-91.232 199.984-203.81z" p-id="12614"></path>
+                        </svg>
+                    </div>
+                </li>
+                <li  onclick="goToLink(logoutUrl)">
+                    <div class="left-box" >
+                        logout
+                    </div>
+                    <div class = "right-box" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path d="M725.333333 736V597.333333h-298.666666v-170.666666h298.666666V288L949.333333 512 725.333333 736M554.666667 85.333333a85.333333 85.333333 0 0 1 85.333333 85.333334v170.666666h-85.333333V170.666667H170.666667v682.666666h384v-170.666666h85.333333v170.666666a85.333333 85.333333 0 0 1-85.333333 85.333334H170.666667a85.333333 85.333333 0 0 1-85.333334-85.333334V170.666667a85.333333 85.333333 0 0 1 85.333334-85.333334h384z" p-id="8392"></path>
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </li>
     </div>
-</nav>
+</div>
 
 <!--content-->
-<div class="container" style="margin-bottom: 20px">
-        <div class="row">
-            <div class="col-12">
-                <br>
-                <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                    <!-- username -->
-                <div class="form-group col-md-4">
-                    <label for="username"> username </label>
-                    <input type="text" class="form-control" id="username" name="username" value="{{ username }}" >
-                </div>
-                <!--<br><h5 class="col-md-4">暂无头像</h5><br>-->
-                <br> <div class="col-md-4"> avatar </div>
-                    {% if avatar %}
-                        <img src="{{ avatar }}" style="max-width: 20%;" class="col-md-4"><br>
-                    {% else %}
-                        <img src="{% static 'img/logo.png' %}" style="max-width: 20%;" class="col-md-4"><br>
-                    {% endif %}
+<div class="container-card" :class="container_card_next">
 
-                    <!-- avatar -->
-                    <div class="form-group col-md-4">
-                        <label for="avatar">上传头像</label>
-                        <input type="file" class="form-control-file" name="avatar" id="avatar">
-                    </div>
+    <div v-if="!addhtml" class="no-box">
+    <div class="card">
+      <div class="header">
+       <span> </span>
+        <span>
+          <button class="svg_button" @click="left_card">
+          <svg t="1714232006846" class="icon-svg" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17062" width="200" height="200" >
+            <path d="M512 312.888889c45.511111 0 85.333333-39.822222 85.333333-85.333333S557.511111 142.222222 512 142.222222 426.666667 182.044444 426.666667 227.555556 466.488889 312.888889 512 312.888889zM512 597.333333c45.511111 0 85.333333-39.822222 85.333333-85.333333S557.511111 426.666667 512 426.666667 426.666667 466.488889 426.666667 512s39.822222 85.333333 85.333333 85.333333zM512 881.777778c45.511111 0 85.333333-39.822222 85.333333-85.333334s-39.822222-85.333333-85.333333-85.333333-85.333333 39.822222-85.333333 85.333333 39.822222 85.333333 85.333333 85.333334z" fill="#ffffff" p-id="17063"></path>
+          </svg>
+          </button>
+        </span>
+      </div>
+      <button class="upload-file-button" disabled=true>
+        {% if avatar %}
+        <img src="{{ avatar }}" alt="user" @mousedown="preventDefault" />
+       {% else %}
+        <img src="{% static 'img/logo.png' %}" alt="user" @mousedown="preventDefault" />
+        {% endif %}
+      </button>
 
-                    <!-- email_address-->
-                    <div class="form-group col-md-4">
-                        <label for="email_address">email_address</label>
-                        <input type="text" class="form-control" disabled="disabled" id="email_address" name="email_address" value="{{ email_address }}">
-                    </div>
-                    <!-- desc -->
-                    <div class="form-group col-md-4">
-                        <label for="desc">简介</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="desc" name="desc" rows="12" >{{ user_desc }}</textarea>
-                    </div>
-                    <!-- full_name -->
-                    <div class="form-group col-md-4">
-                        <label for="full_name">full_name</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="full_name" name="full_name" rows="12" >{{ full_name }}</textarea>
-                    </div>
-                    <!-- OS_type -->
-                    <div class="form-group col-md-4">
-                        <label for="desc">OS_type</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="OS_type" name="OS_type" rows="12" >{{ OS_type }}</textarea>
-                    </div>    
+      <div class="content">
+        <h1 class="show-username" >{{ username }}</h1>
+      </div>
+      <div class="content">
+        <p class="show-email" >{{ email_address }}</p>
+      </div>
+      <div class="content">
+        <p class="show-about">
+          {{user_desc}}
+        </p>
+      </div>
+    </div>
+</div>
+<div v-else class="add-box">
+            <form method="post" enctype="multipart/form-data" class="add-box" id="add-box" autocomplete="off" >
+            {% csrf_token %}
+            <div class="card">
+            <div class="header">
+            <span> </span>
+            <span>
+             <button class="svg_button" @click.prevent="">
+             <svg t="1714232006846" class="icon-svg" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17062" width="200" height="200" >
+                <path d="M512 312.888889c45.511111 0 85.333333-39.822222 85.333333-85.333333S557.511111 142.222222 512 142.222222 426.666667 182.044444 426.666667 227.555556 466.488889 312.888889 512 312.888889zM512 597.333333c45.511111 0 85.333333-39.822222 85.333333-85.333333S557.511111 426.666667 512 426.666667 426.666667 466.488889 426.666667 512s39.822222 85.333333 85.333333 85.333333zM512 881.777778c45.511111 0 85.333333-39.822222 85.333333-85.333334s-39.822222-85.333333-85.333333-85.333333-85.333333 39.822222-85.333333 85.333333 39.822222 85.333333 85.333333 85.333334z" fill="#ffffff" p-id="17063"></path>
+            </svg>
+            </button>
+            </span>
+            </div>
+       <button  class="upload-file-button pro" onclick="document.getElementById('avatar').click()" @click.prevent="">
+        <img src="{{ avatar }}" alt="user" @mousedown="preventDefault" />
+      </button>
+      <input type="file" class="form-control-file" name="avatar" id="avatar" style="display: none" accept=".png,.jpg,.jpeg" >
+
+        <div class="content">
+            <input  type="text" class="form-control" id="username" name="username" value="{{ username }}" @keydown.enter.prevent="$event.target.blur()">
+        </div>
+
+   <div class="content">
+        <input type="text" class="form-control" id="email_address" name="email_address" value="{{ email_address }}" @keydown.enter.prevent="$event.target.blur()">
+      </div>
+
+                  <div class="content">
+        <textarea type="text" class="form-control" id="desc" name="desc" rows="12" >{{user_desc}}</textarea>
+      </div>
+         </div>
+                <div class="else-infomation" v-if="addhtml">
+                    <div class='new_box'>
+                         <div class="header">
+                               <span> </span>
+                             <span>
+                             <button id="svg_right_button" @click="close_right">
+            <svg t="1714252159307" class="icon-svg" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4261" width="200" height="200">
+              <path d="M572.16 512l183.467-183.04a42.667 42.667 0 1 0-60.587-60.587L512 451.84 328.96 268.373a42.667 42.667 0 0 0-60.587 60.587L451.84 512 268.373 695.04a42.667 42.667 0 0 0 0 60.587 42.667 42.667 0 0 0 60.587 0L512 572.16l183.04 183.467a42.667 42.667 0 0 0 60.587 0 42.667 42.667 0 0 0 0-60.587z" fill="#247dd7" p-id="4262"></path>
+            </svg>
+            </button>
+          </span>
+        </div>
+        <div class="form-container">
+          <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                  <label class="form-group-label" for="full_name"> full name </label>
+              </div>
+              <input type="text" class="form-control" id="full_name" name="full_name" value="{{ full_name }}" >
+          </div>
+          <!-- OS_type -->
+          <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                <label class="form-group-label" for="OS_type"> OS type </label>
+              </div>
+              <select id="OS_type" name="OS_type" class="form-control" required>
+                  <option value="Windows"> Windows </option>
+                  <option value="mac-OS"> mac OS </option>
+                  <option value="Linux"> Linux </option>
+              </select>
+          </div>
+
                     <!-- IP_address -->
-                    <div class="form-group col-md-4">
-                        <label for="IP_address">IP_address</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="IP_address" name="IP_address" rows="12" >{{ IP_address }}</textarea>
-                    </div> 
+       <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                <label class="form-group-label" for="IP_address"> IP address </label>
+              </div>
+              <input type="text" class="form-control" id="IP_address" name="IP_address" value="{{ IP_address }}" >
+          </div>
                     <!-- Team -->
-                    <div class="form-group col-md-4">
-                        <label for="Team">Team</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="Team" name="Team" rows="12" >{{ Team }}</textarea>
-                    </div> 
-                    <!-- Role -->
-                    <div class="form-group col-md-4">
-                        <label for="Role">Role</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="Role" name="Role" rows="12" >{{ Role }}</textarea>
-                    </div>                                         
-                    <!-- Team_name -->
-                    <div class="form-group col-md-4">
-                        <label for="Team_name">Team_name</label>
-                        <!-- 文本区域 -->
-                        <textarea type="text" class="form-control" id="Team_name" name="Team_name" rows="12" >{{ Team_name }}</textarea>
-                    </div> 
+          <!-- Team -->
+          <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                <label class="form-group-label" for="Team"> Team </label>
+              </div>
+              <select id="Team" name="Team" class="form-control" required>
+                  <option value="Blue">Blue</option>
+                  <option value="White">White</option>
+              </select>
+          </div>
+          <!-- Role -->
+          <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                <label class="form-group-label" for="Role"> Role </label>
+              </div>
+              <select id="Role" name="Role" class="form-control" required>
+                  <option value="Lead">Lead</option>
+                  <option value="Member">Member</option>
+              </select>
+          </div>
+          <!-- Team_name -->
+          <div class="form-group col-md-4">
+              <div class = "form-group-left">
+                <label class="form-group-label" for="Team_name"> Team name </label>
+              </div>
+              <input type="text" class="form-control" id="Team_name" name="Team_name" value="{{ Team_name }}" >
+          </div>
 
-                    <!-- 提交按钮 -->
-                    <button type="submit" class="btn btn-primary" style="margin-left: 12px" >修改</button>
-                </form>
+          <button type="button" class="btn btn-primary" id="cancel" @click="center_card">Cancel</button>
+          <button type="submit" class="btn sub" id="save_form">Save</button>
+                </div>
             </div>
         </div>
+        </form>
     </div>
-
+</div>
 
 </div>
 <!-- 引入js -->
 <script type="text/javascript" src="{% static 'js/host.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/center2.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/center4.js' %}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectedOS = "{{ OS_type }}";
+        var selectElement = document.getElementById("OS_type");
+
+        for (var i = 0; i < selectElement.options.length; i++) {
+            if (selectElement.options[i].value === selectedOS) {
+                selectElement.selectedIndex = i;
+                break;
+            }
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectedOS = "{{ Team }}";
+        var selectElement = document.getElementById("Team");
+
+        for (var i = 0; i < selectElement.options.length; i++) {
+            if (selectElement.options[i].value === selectedOS) {
+                selectElement.selectedIndex = i;
+                break;
+            }
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectedOS = "{{ Role }}";
+        var selectElement = document.getElementById("Role");
+
+        for (var i = 0; i < selectElement.options.length; i++) {
+            if (selectElement.options[i].value === selectedOS) {
+                selectElement.selectedIndex = i;
+                break;
+            }
+        }
+    });
+</script>
+
+<script>
+const writeBlogUrl = "{% url 'users:writeblog' %}";
+const centerUrl = "{% url 'users:center' %}";
+const logoutUrl = "{% url 'users:logout' %}";
+
+function goToLink(url) {
+    window.location.href = url;
+}
+</script>
+
 </body>
 
 </html>

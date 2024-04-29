@@ -3,21 +3,11 @@ from django.urls import reverse
 from django.views import View
 from home.models import ArticleCategory,Article
 from django.http.response import HttpResponseNotFound
-
-class IndexView(View):
+#进入首页需要登陆
+from django.contrib.auth.mixins import LoginRequiredMixin
+class IndexView(LoginRequiredMixin, View):
     def get(self,request):
-        """
-        1.获取所有分类信息
-        2.接收用户点击的分类id
-        3.根据分类id进行分类的查询
-        4.获取分页参数
-        5.根据分类信息查询文章数据
-        6.创建分页器
-        7.进行分页处理
-        8.组织数据传递给模板
-        :param request:
-        :return:
-        """
+
         # 1.获取所有分类信息
         categories=ArticleCategory.objects.all()
         # 2.接收用户点击的分类id
@@ -26,7 +16,7 @@ class IndexView(View):
         try:
             category=ArticleCategory.objects.get(id=cat_id)
         except ArticleCategory.DoesNotExist:
-            return HttpResponseNotFound('没有此分类')
+            return HttpResponseNotFound('No such category')
         # 4.获取分页参数
         page_num=request.GET.get('page_num',1)
         page_size=request.GET.get('page_size',10)
@@ -55,21 +45,10 @@ class IndexView(View):
         return render(request,'index.html',context=context)
 
 from home.models import Comment
-class DetailView(View):
+class DetailView(LoginRequiredMixin,View):
 
     def get(self,request):
-        """
-        1.接收文章id信息
-        2.根据文章id进行文章数据的查询
-        3.查询分类数据
-        4.获取分页请求参数
-        5.根据文章信息查询评论数据
-        6.创建分页器
-        7.进行分页处理
-        8.组织模板数据
-        :param request:
-        :return:
-        """
+
         # 1.接收文章id信息
         id=request.GET.get('id')
         # 2.根据文章id进行文章数据的查询
@@ -120,18 +99,7 @@ class DetailView(View):
         return render(request,'detail.html',context=context)
 
     def post(self,request):
-        """
-        1.先接收用户信息
-        2.判断用户是否登录
-        3.登录用户则可以接收 form数据
-            3.1接收评论数据
-            3.2验证文章是否存在
-            3.3保存评论数据
-            3.4修改文章的评论数量
-        4.未登录用户则跳转到登录页面
-        :param request:
-        :return:
-        """
+
         # 1.先接收用户信息
         user=request.user
         # 2.判断用户是否登录
@@ -144,7 +112,7 @@ class DetailView(View):
             try:
                 article=Article.objects.get(id=id)
             except Article.DoesNotExist:
-                return HttpResponseNotFound('没有此文章')
+                return HttpResponseNotFound('This article was not found')
             #     3.3保存评论数据
             Comment.objects.create(
                 content=content,

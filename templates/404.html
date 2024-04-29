@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<!-- 网站主语言 -->
 <html lang="en">
 
 <head>
-    <!-- 网站采用的字符编码 -->
     <meta charset="utf-8">
-    <!-- 网站标题 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404</title>
     {% load static %}
-    <!-- 引入bootstrap的css文件 -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
 </head>
@@ -16,15 +13,12 @@
 <body>
 <div id="app">
 
-<!-- 定义导航栏 -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <!-- 导航栏商标 -->
         <div>
-            <a class="navbar-brand" href="{% url 'home:index' %}">个人博客</a>
+            <a class="navbar-brand" href="{% url 'home:index' %}">awvl</a>
         </div>
     </div>
-    <!--登录/个人中心-->
     <div class="navbar-collapse">
     </div>
 </nav>
@@ -33,7 +27,7 @@
     <img src="{% static 'img/404.jpeg' %}" alt="">
     <br>
     <div style="text-align: center;">
-        <a href="{% url 'home:index' %}" class="primaryAction btn btn-primary">返回首页</a>
+        <a href="{% url 'home:index' %}" class="primaryAction btn btn-primary">Back to home page</a>
     </div>
 </div>
 
