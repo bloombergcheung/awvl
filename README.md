@@ -15,7 +15,7 @@ pip install PyMySQL
 pip install django-redis
 pip install pillow==9.5.0
 ```
-
+also need to install mysql
 ## generate migration files & perform migration
 ```
 python manage.py makemigrations
