@@ -38,8 +38,9 @@ python manage.py runserver
 ## Background management
 ```
 localhost:8000/admin
-
+```
 Creating a Super Administrator
+```
 python manage.py createsuperuser
 ```
 
