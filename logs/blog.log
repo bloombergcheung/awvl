@@ -5900,3 +5900,10 @@ INFO 2024-04-29 15:33:19,408 basehttp 212 "GET / HTTP/1.1" 200 18574
 INFO 2024-04-29 15:33:34,433 basehttp 212 "GET / HTTP/1.1" 200 18574
 INFO 2024-04-29 15:33:40,204 basehttp 212 "GET /writeblog/ HTTP/1.1" 200 5631
 INFO 2024-04-29 15:33:41,053 basehttp 212 "GET /center/ HTTP/1.1" 200 13300
+INFO 2024-04-29 15:41:19,439 autoreload 668 Watching for file changes with StatReloader
+INFO 2024-04-29 15:41:23,732 basehttp 212 "GET /register/ HTTP/1.1" 200 8962
+INFO 2024-04-29 15:41:23,750 basehttp 212 "GET /static/css/register.css HTTP/1.1" 200 2615
+INFO 2024-04-29 15:41:23,758 basehttp 212 "GET /static/js/register3.js HTTP/1.1" 200 1674
+WARNING 2024-04-29 15:41:23,799 log 241 Not Found: /favicon.ico
+WARNING 2024-04-29 15:41:23,800 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 3602
+INFO 2024-04-29 15:41:25,957 basehttp 212 "GET /center/ HTTP/1.1" 200 13300
