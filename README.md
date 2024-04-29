@@ -44,6 +44,7 @@ Creating a Super Administrator
 ```
 python manage.py createsuperuser
 ```
+Add a category to localhost:8000/admin
 
 
 
