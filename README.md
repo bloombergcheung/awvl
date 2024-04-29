@@ -1,5 +1,5 @@
 # awvl
-Must be opened using google chrome 
+Open in google chrome
 # Installing
 ## Clone the project
 ```
