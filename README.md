@@ -1,5 +1,5 @@
 # awvl
-Please open in google chrome
+
 # Installing
 ## Clone the project
 ```
@@ -31,8 +31,10 @@ redis-cli
 ```
 
 ## Running
+Please open in google chrome
 ```
 python manage.py runserver
+localhost:8000
 ```
 
 ## Background management
