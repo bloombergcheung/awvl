@@ -3,7 +3,7 @@ Please open in google chrome
 # Installing
 ## Clone the project
 ```
-git clone https://github.com/bloombergcheung/awvl.git
+git clone -b master --single-branch https://github.com/bloombergcheung/awvl.git
 cd awvl
 ```
 ## Install dependencies & activate virtualenv
