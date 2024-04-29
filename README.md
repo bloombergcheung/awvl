@@ -1,4 +1,3 @@
-# awvl
 
 # Installing
 ## Clone the project
