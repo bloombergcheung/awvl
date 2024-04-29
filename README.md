@@ -35,10 +35,11 @@ redis-cli
 python manage.py runserver
 ```
 
-## 后台管理
+## Background management
 ```
 localhost:8000/admin
-创建超级管理员
+
+Creating a Super Administrator
 python manage.py createsuperuser
 ```
 
