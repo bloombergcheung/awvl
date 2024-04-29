@@ -1,5 +1,5 @@
 # awvl
-必须使用google chrome打开（首选语言：英语）
+Must be opened using google chrome 
 # Installing
 ## Clone the project
 ```
