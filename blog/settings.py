@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         # mysql 版本 5.7
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',   # 数据库名字
+        'NAME': '',   # 数据库名字
         'USER': 'root',     # 数据库用户名
-        'PASSWORD': 'zpbcr753',     # 数据库密码
+        'PASSWORD': '',     # 数据库密码
         'HOST': '127.0.0.1',
         'PORT': 3306
     }
